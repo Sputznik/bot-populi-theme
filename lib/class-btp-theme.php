@@ -12,6 +12,9 @@ class BTP_THEME extends BTP_SINGLETON {
         add_action( 'wp_enqueue_scripts', [ $this, 'registerStylesCb' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'registerScriptsCb' ] );
         add_action( 'after_setup_theme', [ $this, 'afterSetupThemeCb' ] );
+
+        // enqueue scripts for wp admin backend
+		add_action( 'admin_enqueue_scripts', array( $this, 'adminScriptsCb' ) );
     }
 
 
@@ -46,38 +49,44 @@ class BTP_THEME extends BTP_SINGLETON {
         wp_enqueue_script('btp-script'); 
     }
 
+    /**
+     * Callback function to enqueue scripts in wp dashboard 
+     */
+    public function adminScriptsCb($hook)
+    {
+        if( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' ) {
+            return;
+        }
+				
+        //wp_enqueue_script('fcbk', $uri.'jquery.fcbkcomplete.min.js', array('jquery'), '1.2.4');
+        
+        wp_enqueue_script(
+            'btn-autocomplete',
+            BTP_DIR_URI .'/assets/js/admin.js',
+            [ 'jquery', 'jquery-ui-autocomplete' ],
+            1.0,
+            true
+        );
+    }
+
 
     /**
      * Callback funciton for After Theme Setup hook
      */
     public function afterSetupThemeCb()
     {
-        $this->registerThemeMenus();
-
-        $this->loadNavWalker();
-        
-    }
-
-
-    /**
-     * Loads Bootstrap Navwalker Class
-     */
-    public function loadNavWalker()
-    {
-        require_once BTP_DIR_PATH . '/lib/class-wp-bootstrap-navwalker.php';
-    }
-
-
-    /**
-     * Regsister Site Menus
-     *  */    
-    public function registerThemeMenus()
-    {
+        // Register Theme Menus 
         register_nav_menus( [
             'btp-header-menu' => esc_html__('Header Menu', 'bot-populi'),
             'btp-footer-menu' => esc_html__('Footer Menu', 'bot-populi'),
         ] );
-    
+
+        // Load Boostrap Navwalker class    
+        require_once BTP_DIR_PATH . '/lib/class-wp-bootstrap-navwalker.php';
+
+        // Register Theme Supports
+        add_theme_support( 'post-thumbnails' );
+        
     }
 
 

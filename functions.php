@@ -18,6 +18,7 @@ if( !defined( 'BTP_DIR_URI' ) ) {
 $inc_files = [
     'lib/class-btp-singleton.php',
     'lib/class-btp-theme.php',
+    'lib/btp-cpt/btp-cpt.php',
 ];
 
 foreach ($inc_files as $file_to_include ) {
