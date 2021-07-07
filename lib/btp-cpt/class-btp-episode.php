@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Registers custom post type (podcast's) Episode
+ * Registers custom post type for Episode.
+ * Episode CPT is linked as child of Podcast CPT   
  */
 class BTP_EPISODE extends BTP_SINGLETON {
 
     public function __construct() {
         
-        /* Creating cpt using orbit-bundle plugin */
+        /* Creating Episode CPT using orbit-bundle plugin */
         add_filter( 'orbit_post_type_vars', function( $post_types ){
             $post_types['episode'] = [
                 'slug' 		=> 'episode',
@@ -28,31 +29,71 @@ class BTP_EPISODE extends BTP_SINGLETON {
         } );
 
 
-        add_action('add_meta_boxes', [ $this, 'addMetaBoxCb' ]);
+        add_action( 'add_meta_boxes', [ $this, 'addMetaBoxCb' ] );
 
         add_action( 'save_post', array( $this, 'saveMetaBoxCb' ), 10, 1 );
 
     }
 
+
+    /**
+     * Callback for add_meta_boxes
+     */
     public function addMetaBoxCb()      
     {
-        $fields = apply_filters( 'btp-episode-meta-box-fields', [] );
+        $fields = [];
+
+        // attach meta fields callback that needs to be rendered 
+        $fields['btp-episode-fields'] = [$this, 'renderMetaFields'];
         
-        $fields['btp-episode-number'] = [$this, 'metaBoxFields'];
+        //inject fields from other place  
+        $fields = apply_filters( 'btp-episode-meta-box-fields', $fields );
         
         add_meta_box( 'btp-episode-meta', 'Episode Information', [ $this, 'renderMetaBoxCb' ], ['episode'], 'normal', 'low', $fields );
     }
 
-    public function metaBoxFields()
+
+    /**
+     * Set episode meta fields arguments here
+     */
+    public function episodeMetaFields()
+    {
+        return [
+            [ 
+              'label' => 'Episode Number',
+              'key'   => 'btp_episode_number'
+            ],
+
+            [ 
+              'label' => 'Episode Duration',
+              'key'   => 'btp_episode_duration'
+            ],
+        ];
+    }
+
+
+    /**
+     * Helper function which is attached as callback for adding metabox field 
+     */
+    public function renderMetaFields()
     {   
         global $post; 
-        $meta_key = 'episode_number'; ?>
-        <div style="margin-top: 20px;">
-            <label> Episode Number </label>
-            <input type="text" name="episode_number" value="<?php echo get_post_meta($post->ID, 'episode_number', true)?>"> 
-        </div>    <?php
+        
+        $fields = $this->episodeMetaFields();
+        
+        foreach ($fields as $meta) : ?>
+            <div style='margin-bottom: 15px;'>
+                <label> <?php echo $meta['label']?> </label>
+                <input type="text" name="<?php echo $meta['key']?>" value="<?php echo get_post_meta($post->ID, $meta['key'], true)?>"> 
+            </div> <?php
+        endforeach;
+        
     }
     
+
+    /**
+     * Callback function for add_meta_box
+     */
     public function renderMetaBoxCb($post, $meta_box)
     {   ?>
         <div class="form-wrap">
@@ -70,6 +111,10 @@ class BTP_EPISODE extends BTP_SINGLETON {
         </div> <?php
     }
 
+
+    /**
+     * Callback function for save_post
+     */
     public function saveMetaBoxCb( $post_id ){
         
         // Check if our nonce is set.
@@ -81,19 +126,29 @@ class BTP_EPISODE extends BTP_SINGLETON {
         // If this is an autosave, our form has not been submitted, so we don't want to do anything.
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
+        //save injected fields
         do_action( 'btp-episode-save-meta-box', $post_id );
 
-        $this->saveEpisodeNumberMeta($post_id);
+        //save episode's fields
+        $this->saveMetaFields($post_id);
         
     }
 
-    public function saveEpisodeNumberMeta($post_id)
+
+    /**
+     * Helper function to persist episode meta fields
+     */
+    public function saveMetaFields($post_id)
     {
-        if( isset( $_POST['podcast_id'] ) ){
-            update_post_meta($post_id, 'episode_number', $_POST['episode_number'] );
+        $fields = $this->episodeMetaFields();
+
+        foreach ($fields as $field) {
+            $key = $field['key'];
+            if( isset( $_POST[$key] ) ){
+                update_post_meta($post_id, $key, $_POST[$key] );
+            }
         }
     }
-
 
 }
 

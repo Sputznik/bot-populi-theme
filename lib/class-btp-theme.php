@@ -23,11 +23,11 @@ class BTP_THEME extends BTP_SINGLETON {
      */
     public function registerStylesCb()
     {
-        //Register Styles
+        // Register Styles
         wp_register_style('bootstrap', BTP_DIR_URI . '/assets/css/bootstrap.min.css', [], false, 'all');
         wp_register_style('btp-style', BTP_DIR_URI . '/assets/css/style.css', ['bootstrap'], filemtime( BTP_DIR_PATH . '/assets/css/style.css' ), 'all');
         
-        //Enqueue Styles
+        // Enqueue Styles
         wp_enqueue_style('bootstrap');
         wp_enqueue_style('btp-style');
         
@@ -48,6 +48,7 @@ class BTP_THEME extends BTP_SINGLETON {
         wp_enqueue_script('bootstrap-script');
         wp_enqueue_script('btp-script'); 
     }
+   
 
     /**
      * Callback function to enqueue scripts in wp dashboard 
@@ -57,8 +58,6 @@ class BTP_THEME extends BTP_SINGLETON {
         if( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' ) {
             return;
         }
-				
-        //wp_enqueue_script('fcbk', $uri.'jquery.fcbkcomplete.min.js', array('jquery'), '1.2.4');
         
         wp_enqueue_script(
             'btn-autocomplete',

@@ -8,18 +8,19 @@ class BTP_PODCAST extends BTP_SINGLETON {
     
     public function __construct() {
         
+        // hooks into episode cpt metabox
         add_filter( 'btp-episode-meta-box-fields', function( $fields ){
             $fields['btp-podcast'] = [ $this, 'renderMetaBox' ];
             return $fields;
         } );
 
+        // hooks into episode save metabox
         add_action( 'btp-episode-save-meta-box', [ $this, 'saveEpisodeMetaBoxCb' ], 10, 1 );
 
-        
+        // resolves typeahead suggestion data
         add_action( 'wp_ajax_podcast_json', [ $this, 'getJson' ] );
 
-
-        // CREATING CPT USING ORBIT BUNDLE PLUGIN AS DEPENDANCY
+        // creates Podacast CPT using Orbit Bundle Plugin
     	add_filter( 'orbit_post_type_vars', function( $post_types ){
             $post_types['podcast'] = array(
                   'slug' 		=> 'podcast',
@@ -40,6 +41,10 @@ class BTP_PODCAST extends BTP_SINGLETON {
 
     }
 
+
+    /**
+     * Callback function to display typeahed field for selecting Podcast Series
+     */
     function renderMetaBox( $post ){
         $field = array(
             'label'              => 'Select Podcast Series ',
@@ -53,6 +58,10 @@ class BTP_PODCAST extends BTP_SINGLETON {
         echo "<div data-behaviour='btp-autocomplete' data-field='".wp_json_encode( $field )."'></div>";
     }
 
+
+    /**
+     * Returns Podcast Title as Json Array 
+     */
     function getJson(){
         global $wpdb;
         $search = $_GET['term'];
@@ -65,6 +74,9 @@ class BTP_PODCAST extends BTP_SINGLETON {
     }
 
 
+    /**
+     * Callback function to save metabox value hooked in Episode CPT
+     */
     public function saveEpisodeMetaBoxCb( $post_id )
     {
         if( isset( $_POST['podcast_id'] ) ){
