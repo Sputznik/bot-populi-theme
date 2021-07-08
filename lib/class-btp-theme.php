@@ -55,12 +55,9 @@ class BTP_THEME extends BTP_SINGLETON {
      */
     public function adminScriptsCb($hook)
     {
-        if( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' ) {
-            return;
-        }
         
         wp_enqueue_script(
-            'btn-autocomplete',
+            'btn-admin',
             BTP_DIR_URI .'/assets/js/admin.js',
             [ 'jquery', 'jquery-ui-autocomplete' ],
             1.0,
