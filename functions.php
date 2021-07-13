@@ -27,6 +27,15 @@ foreach ($inc_files as $file_to_include ) {
 }
 
 
+// ADD EXTRA FIELDS TO THE ORBIT QUERY ATTS
+add_filter('orbit_query_atts', function( $atts ){
+    $atts['back_btn'] = '0';
+    $atts['back_btn_title'] = '';
+    $atts['back_btn_slug'] = '';
+    return $atts;
+});
+
+
 /**
  * Helper function that dump and dies for debugging
  */

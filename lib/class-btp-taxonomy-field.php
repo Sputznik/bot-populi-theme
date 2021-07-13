@@ -21,6 +21,9 @@ class BTP_TAXONOMY_FIELD extends BTP_SINGLETON {
             add_action( 'edited_category', [ $this, 'updateCategoryField' ], 10, 1 );
         }
 
+        /* Allow HTML in term (category, tag) descriptions */
+        $this->allowHtmlInDescription();
+
     }
 
     /**
@@ -29,6 +32,26 @@ class BTP_TAXONOMY_FIELD extends BTP_SINGLETON {
     public function enqueueMediaScript()
     {
         wp_enqueue_media();
+    }
+
+
+    /**
+     * Allow HTML in term (category, tag) descriptions
+     */
+    public function allowHtmlInDescription()
+    {
+        // prevents HTML from being stripped from term descriptions
+        foreach ( array( 'pre_term_description' ) as $filter ) {
+            remove_filter( $filter, 'wp_filter_kses' );
+            if ( ! current_user_can( 'unfiltered_html' ) ) {
+                add_filter( $filter, 'wp_filter_post_kses' );
+            }
+        }
+        
+        // prevents HTML being stripped out when using the term description function
+        // foreach ( array( 'term_description' ) as $filter ) {
+        //     remove_filter( $filter, 'wp_kses_data' );
+        // }
     }
 
 
@@ -69,7 +92,7 @@ class BTP_TAXONOMY_FIELD extends BTP_SINGLETON {
                 <a href="#" data-behaviour=btp-taxonomy-image class="btp_cat_image_btn button button-secondary"><?php _e('Set Featured Image'); ?></a>
                 &nbsp; &nbsp;
                 <a href="#" data-behaviour=btp-taxonomy-image class="btp_cat_image_delete" style="<?php $image_url ? '' : _e('display:none');?>"><?php _e('Remove Featured Image'); ?></a>
-                <input type="hidden" name="btp_category_image" id="btp_category_image" value="" />
+                <input type="hidden" name="btp_category_image" id="btp_category_image" value="<?php $image_url ? _e($image_url) : '';?>" />
             </p>
             </td>
         </tr> <?php            

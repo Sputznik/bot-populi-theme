@@ -11,8 +11,10 @@
 <?php wp_body_open();?>
 <div id="site">
 
-    <!-- Navigation Bar -->
-    <?php get_template_part( 'template-parts/header-nav' ); ?>
+    <header>
+        <!-- Navigation Bar -->
+        <?php get_template_part( 'template-parts/header-nav' ); ?>
+    </header>
     
     <!-- Content Section -->
     <main>  

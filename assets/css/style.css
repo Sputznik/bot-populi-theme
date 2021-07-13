@@ -1,0 +1,194 @@
+/* Typography and general styles*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@400;600;700&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #3d3d3d;
+}
+p, p a {
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+}
+h1 { font-size: 3em; line-height: 60px; }
+h2 { font-size: 2em; line-height: 48px; }
+h3 { font-size: 1.8em; line-height: 42px; }
+h4 { font-size: 1.6em; line-height: 36px; }
+h5 { font-size: 1.4em; line-height: 32px; }
+h6 { font-size: 1.2em; line-height: 28px; }
+
+.purple {
+  color: #9F00C5; /* used for on some headlines, buttons, links etc */
+}
+
+button {
+  border: 1px solid #9F00C5;
+  padding: 20px 12px;
+  color: #9F00C5;
+  background: white;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+/* Header styles */
+header {
+  background: #F2F2F2;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  /* height: 100px; */
+  text-transform: uppercase;
+}
+/* header nav {
+  margin-bottom:38px;
+} */
+header nav a {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #3d3d3d;
+  text-decoration: none;
+}
+header nav a:hover {
+  font-weight:600;
+}
+header nav a:active {
+  color: #9F00C5;
+}
+
+/* FEATURED/BANNER IMAGE used on homepage slider, single templates, category templates */
+.featured {
+  height: 500px;
+  background-repeat: no-repeat !important; 
+  background-attachment: scroll !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+.featured > .featured-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+
+/* Category template styles for desktop (1280px and above),  refer to section layout */
+.category .overlay-div {
+  /* wrapper */
+  margin-top: -132px;
+  background-color: #FAFAFA;
+  max-width: 1108px;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.category .title {
+  color: #9F00C5;
+  font-size: 3em;
+}
+.category .title-seperator {
+  border: 1px solid #BDBDBD;
+  margin: 30px 0;
+}
+.category p {
+  /* category description */
+  max-width: 660px;
+}
+
+.category .category-posts {
+  margin-top: 50px
+}
+
+/* Orbit card */
+.orbit-post-grid {
+  /* three-column grid structure */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.orbit-post-grid article {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 245px 1fr;
+  grid-template-areas: "image" "content";
+  max-height: 400px;
+  overflow: hidden;
+  background-color: white;
+  /* border: 1px solid rgb(133, 130, 130);  */
+}
+
+.orbit-post-grid article a {
+  /* color: #3d3d3d; */
+  text-decoration: none;
+}
+
+
+.orbit-post-grid article .feat-img {
+  grid-area: image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.orbit-post-grid article .feat-img-overlay {
+  position: absolute;
+  bottom: 14px;
+  left: 11px;
+  height: 20px;
+  background: #3d3d3d;
+  border-radius: 2px;
+  color: white;
+  padding: 5px 3px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+.orbit-post-grid article .content-wrap {
+  background: white;
+  padding: 10px;
+}
+.orbit-post-grid article .title {
+  color: #4f4f4f;
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.orbit-post-grid article .authors {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #828282;
+  margin-bottom: 0px;
+}
+.orbit-post-grid article .meta {
+  color: #bdbdbd;
+}
+
+.orbit-btn-load-parent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orbit-btn-load-parent .load-more, .orbit-btn-load-parent .btp-back-btn {
+  display: flex;
+  font-size: 0.9em;
+  font-weight: 300;
+  min-width: 175px;
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-color: #555b61;
+  color: #555b61;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.orbit-btn-load-parent .btp-back-btn a {
+  color: #555b61;
+  text-decoration: none;
+}
+
+
+

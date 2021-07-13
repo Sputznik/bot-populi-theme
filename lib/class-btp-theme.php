@@ -25,10 +25,12 @@ class BTP_THEME extends BTP_SINGLETON {
     {
         // Register Styles
         wp_register_style('bootstrap', BTP_DIR_URI . '/assets/css/bootstrap.min.css', [], false, 'all');
+        wp_register_style('font-awesome', BTP_DIR_URI . '/assets/css/font-awesome-5-15-3/css/all.min.css', false, null );
         wp_register_style('btp-style', BTP_DIR_URI . '/assets/css/style.css', ['bootstrap'], filemtime( BTP_DIR_PATH . '/assets/css/style.css' ), 'all');
         
         // Enqueue Styles
         wp_enqueue_style('bootstrap');
+        wp_enqueue_style('font-awesome');
         wp_enqueue_style('btp-style');
         
     }
