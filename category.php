@@ -15,7 +15,7 @@
             <div class="title-seperator"></div>
             <p><?php _e( $category->category_description ); ?></p>
             <div class="category-posts"> <?php 
-                $output = do_shortcode('[orbit_query category="'. $category->category_name .'" pagination="1" style="card" posts_per_page="6" back_btn="1" back_btn_title="Back to Section" back_btn_slug="/category"]');
+                $output = do_shortcode('[orbit_query category_name="'. $category->slug .'" pagination="1" style="card" posts_per_page="6" back_btn="1" back_btn_title="Back to Section" back_btn_slug="/category"]');
 
                 echo $output; ?>
             </div>
