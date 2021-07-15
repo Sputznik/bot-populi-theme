@@ -68,6 +68,12 @@ class BTP_EPISODE extends BTP_SINGLETON {
               'label' => 'Episode Duration',
               'key'   => 'btp_episode_duration'
             ],
+            
+            [ 
+              'label' => 'Episode Url',
+              'key'   => 'btp_episode_url'
+            ],
+
         ];
     }
 

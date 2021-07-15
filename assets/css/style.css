@@ -97,8 +97,8 @@ header nav a:active {
   max-width: 660px;
 }
 
-.category .category-posts {
-  margin-top: 50px
+.category .category-posts-wrapper {
+  margin-top: 30px
 }
 
 /* Orbit card */
@@ -125,6 +125,7 @@ header nav a:active {
   /* color: #3d3d3d; */
   text-decoration: none;
 }
+
 
 
 .orbit-post-grid article .feat-img {
@@ -171,24 +172,87 @@ header nav a:active {
   justify-content: space-between;
 }
 
-.orbit-btn-load-parent .load-more, .orbit-btn-load-parent .btp-back-btn {
-  display: flex;
-  font-size: 0.9em;
-  font-weight: 300;
-  min-width: 175px;
-  padding: 5px 10px;
-  align-items: center;
-  justify-content: space-between;
-  border-color: #555b61;
-  color: #555b61;
+.orbit-btn-load-parent .load-more, .btp-back-btn {
+  font-size: 1em;
+  font-weight: 600;
+  min-width: 147px;
+  line-height: 16px;
+  padding: 12px 20px;
   text-transform: uppercase;
   margin-top: 15px;
 }
 
-.orbit-btn-load-parent .btp-back-btn a {
-  color: #555b61;
+.btp-back-btn a {
+  color: #9F00C5;
   text-decoration: none;
+}
+
+.orbit-btn-load-parent .load-more i, .orbit-btn-load-parent .btp-back-btn i {
+  margin-left: 17px;
 }
 
 
 
+@media (max-width: 480px) { 
+
+  .featured {
+    height: 140px;
+  }
+
+  .category .overlay-div {
+    margin-top: 0px;
+    padding: 27.4px 16.53px 0 17.47px;
+  }
+
+  .category .title {
+   font-size: 2.19em;
+   line-height: 40px;
+  }
+
+  .category .title-seperator {
+    margin: 15px 0px 20.46px 0px;
+  }
+
+  .category p {
+    font-weight: 300;
+    font-size: 0.875em;
+    line-height: 24px;
+  }
+
+  .category .category-posts-wrapper {
+    margin-top: 24px;
+  }
+  
+  .orbit-post-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .orbit-post-grid article {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 118px;
+  }
+
+  .orbit-post-grid article .content-wrap {
+    padding: 0 7px;
+  }
+
+  .orbit-post-grid article .title {
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1.18em;
+  }
+
+  .orbit-post-grid article .authors {
+    font-weight: 500;
+    font-size: 0.75em;
+    line-height: 0.875em;
+  }
+
+  .orbit-post-grid article .meta {
+    font-weight: 400;
+    font-size: 0.75em;
+    line-height: 0.875em;
+  }
+
+}
