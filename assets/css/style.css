@@ -73,37 +73,35 @@ header nav a:active {
   opacity: 0.6;
 }
 
-/* Category template styles for desktop (1280px and above),  refer to section layout */
-.category .overlay-div {
+main .overlay-div {
   /* wrapper */
   margin-top: -132px;
+  margin-bottom: 140px;
   background-color: #FAFAFA;
   max-width: 1108px;
-  padding: 50px;
+  padding: 42px 56px 100px 51px;
   margin-left: auto;
   margin-right: auto;
   
 }
-.category .title {
+.page-title {
   color: #9F00C5;
   font-size: 3em;
 }
-.category .title-seperator {
+.page-title-seperator {
   border: 1px solid #BDBDBD;
   margin: 30px 0;
 }
-.category p {
-  /* category description */
+.page-description p{
   max-width: 660px;
 }
 
-.category .category-posts-wrapper {
+.orbit-posts-wrapper {
   margin-top: 30px
 }
 
 /* Orbit card */
 .orbit-post-grid {
-  /* three-column grid structure */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -118,11 +116,9 @@ header nav a:active {
   max-height: 400px;
   overflow: hidden;
   background-color: white;
-  /* border: 1px solid rgb(133, 130, 130);  */
 }
 
 .orbit-post-grid article a {
-  /* color: #3d3d3d; */
   text-decoration: none;
 }
 
@@ -152,7 +148,7 @@ header nav a:active {
   padding: 10px;
 }
 .orbit-post-grid article .title {
-  color: #4f4f4f;
+  color: #3d3d3d;
   font-weight: 600;
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -168,8 +164,7 @@ header nav a:active {
 }
 
 .orbit-btn-load-parent {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 30px;
 }
 
 .orbit-btn-load-parent .load-more, .btp-back-btn {
@@ -179,7 +174,6 @@ header nav a:active {
   line-height: 16px;
   padding: 12px 20px;
   text-transform: uppercase;
-  margin-top: 15px;
 }
 
 .btp-back-btn a {
@@ -199,27 +193,28 @@ header nav a:active {
     height: 140px;
   }
 
-  .category .overlay-div {
+  main .overlay-div {
     margin-top: 0px;
-    padding: 27.4px 16.53px 0 17.47px;
+    margin-bottom: 0px;
+    padding: 27.4px 17px 100px 17px;
   }
 
-  .category .title {
+  .page-title {
    font-size: 2.19em;
    line-height: 40px;
   }
 
-  .category .title-seperator {
+  .page-title-seperator {
     margin: 15px 0px 20.46px 0px;
   }
 
-  .category p {
+  .page-description {
     font-weight: 300;
     font-size: 0.875em;
     line-height: 24px;
   }
 
-  .category .category-posts-wrapper {
+  .orbit-posts-wrapper {
     margin-top: 24px;
   }
   
@@ -253,6 +248,10 @@ header nav a:active {
     font-weight: 400;
     font-size: 0.75em;
     line-height: 0.875em;
+  }
+
+  .orbit-btn-load-parent .btp-back-btn {
+    display: none;
   }
 
 }

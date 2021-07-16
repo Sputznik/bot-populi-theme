@@ -4,7 +4,7 @@
 		Load More <i class="fas fa-long-arrow-alt-down"></i>
 	</button>
 	<?php if( isset($atts['back_btn']) && $atts['back_btn'] != '0' ) : ?>
-		<button class="btp-back-btn">
+		<button class="btp-back-btn float-right">
 			<a href="<?php _e(home_url($atts['back_btn_slug']));?>"> <?php _e($atts['back_btn_title']);?></a>
 			<i class="fas fa-long-arrow-alt-left"></i>
 		</button>

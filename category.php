@@ -11,11 +11,11 @@
 <div class="container overlay-div">
 	<div class="row">
 		<div class="col-md-12">
-            <h1 class="title"><?php _e( $category->name );?></h1>
-            <div class="title-seperator"></div>
-            <p><?php _e( $category->category_description ); ?></p>
-            <div class="category-posts-wrapper"> <?php 
-                $output = do_shortcode('[orbit_query post_type="post,podcast,episode,video" category_name="'. $category->slug .'" pagination="1" style="card" posts_per_page="6" back_btn="1" back_btn_title="Back to Section" back_btn_slug="/category"]');
+            <h1 class="page-title"><?php _e( $category->name );?></h1>
+            <div class="page-title-seperator"></div>
+            <p class="page-description"><?php _e( $category->category_description ); ?></p>
+            <div class="orbit-posts-wrapper"> <?php 
+                $output = do_shortcode('[orbit_query post_type="post,podcast,episode,video" cat="'. $category->term_id .'" pagination="1" style="card" posts_per_page="6" back_btn="1" back_btn_title="Back to Section" back_btn_slug="/category"]');
 
                 echo $output; ?>
             </div>
