@@ -12,9 +12,28 @@ class BTP_THEME extends BTP_SINGLETON {
         add_action( 'wp_enqueue_scripts', [ $this, 'registerStylesCb' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'registerScriptsCb' ] );
         add_action( 'after_setup_theme', [ $this, 'afterSetupThemeCb' ] );
-
+        
         // enqueue scripts for wp admin backend
-		add_action( 'admin_enqueue_scripts', array( $this, 'adminScriptsCb' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'adminScriptsCb' ) );
+
+
+        // Post Summary metafield usign orbit-bundle plugin
+		add_filter( 'orbit_meta_box_vars', function( $meta_box ){
+			$meta_box['post'] = [
+              [
+                'id'		=> 'btp-post-metafields',
+                'title'	=> 'Article Additional Information',
+                'fields'	=> [
+                    'btp_post_summary' => [
+                    'type'      => 'textarea',
+                    'text'      => 'Summary'
+                    ],
+                ]
+              ]
+            ];
+			return $meta_box;
+		});
+
     }
 
 
