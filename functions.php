@@ -36,6 +36,22 @@ add_filter('orbit_query_atts', function( $atts ){
 });
 
 
+
+function getCategories($post_id)
+{
+    $categories = get_the_category($post_id);
+
+    if( $categories && count($categories)) {
+        echo '<ul class="category-pills">';
+        foreach ($categories as $cat) {
+            echo '<li>'.$cat->name.'</li>';
+        }
+        echo '</ul>';
+    }
+}
+
+
+
 /**
  * Helper function that dump and dies for debugging
  */

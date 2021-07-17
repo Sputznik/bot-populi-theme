@@ -12,7 +12,7 @@
 		<div class="col-md-12">
         <?php if(have_posts()): while ( have_posts() ) : the_post(); ?>
             <h1 class="page-title"><?php the_title();?></h1>
-            <div class="page-title-seperator"></div>
+            <div class="page-title-separator"></div>
             <div class="page-description"><?php the_content(); ?></div>
         <?php endwhile; endif; ?>    
 		</div>

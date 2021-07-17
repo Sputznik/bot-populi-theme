@@ -84,14 +84,18 @@ main .overlay-div {
   margin-right: auto;
   
 }
+
 .page-title {
   color: #9F00C5;
   font-size: 3em;
+  margin: unset;
 }
+
 .page-title-separator {
-  border: 1px solid #BDBDBD;
+  border: 1px solid #d7d7d7;
   margin: 30px 0;
 }
+
 .page-description p{
   max-width: 660px;
 }
@@ -108,7 +112,7 @@ main .overlay-div {
   margin-bottom: 20px;
 }
 
-.orbit-post-grid article {
+.orbit-post-grid article.post-card {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 245px 1fr;
@@ -118,20 +122,20 @@ main .overlay-div {
   background-color: white;
 }
 
-.orbit-post-grid article a {
+.orbit-post-grid article.post-card a {
   text-decoration: none;
 }
 
 
 
-.orbit-post-grid article .feat-img {
+.orbit-post-grid article.post-card .feat-img {
   grid-area: image;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.orbit-post-grid article .feat-img-overlay {
+.orbit-post-grid article.post-card .feat-img-overlay {
   position: absolute;
   bottom: 14px;
   left: 11px;
@@ -143,23 +147,23 @@ main .overlay-div {
   font-size: 0.75em;
   font-weight: 500;
 }
-.orbit-post-grid article .content-wrap {
+.orbit-post-grid article.post-card .content-wrap {
   background: white;
   padding: 10px;
 }
-.orbit-post-grid article .title {
+.orbit-post-grid article.post-card .title {
   color: #3d3d3d;
   font-weight: 600;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
-.orbit-post-grid article .authors {
+.orbit-post-grid article.post-card .authors {
   font-weight: 500;
   font-size: 0.9em;
   color: #828282;
   margin-bottom: 0px;
 }
-.orbit-post-grid article .meta {
+.orbit-post-grid article.post-card .meta {
   color: #bdbdbd;
 }
 
@@ -185,6 +189,11 @@ main .overlay-div {
   margin-left: 17px;
 }
 /* End of Orbit template style = card */
+
+/* Orbit template style = list */
+
+/* End of Orbit template style = card */
+
 
 
 
@@ -351,8 +360,98 @@ figure img {
 
 
 
+/****************
+**** tag.php ****
+****************/
+
+.tag .overlay-div {
+  margin-top: 5px;
+  max-width: 1108px;
+  padding: 50px;
+}
+
+.tag .tag-name {
+  display: inline-block;
+  background-color: #FF7A30;
+  padding: 8px 10px 9px 10px;
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  margin: 30px 0 34px 0;
+  color: #fff;
+}
+
+.tag .orbit-post-grid {
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+}
+
+.tag .orbit-post-grid article.post-list {
+  display: grid;
+  grid-template-columns: 196px 1fr;
+  grid-template-rows: 147px;
+  max-height: 147px;
+  grid-gap: 38px;
+  background-color: unset;
+}
+
+.tag .orbit-post-grid article.post-list .feat-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.tag .orbit-post-grid article.post-list .content-wrap {
+  display: grid;
+  font-size: 16px;
+  background: unset;
+  padding: unset;
+  align-content: space-between;
+}
+
+.tag .orbit-post-grid article.post-list .content-wrap .post-excerpt {
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 26px;
+}
+
+.tag .orbit-post-grid article.post-list .content-wrap .meta{
+  color: #828282;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875em;
+  line-height: 15px;
+}
+
+.tag .page-title-separator {
+  margin: unset;
+}
+
+ul.category-pills  {
+  padding: unset;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-pills li{
+  padding: 3px 5px 3.5px 5px;
+  background-color: #3d3d3d;
+  margin: 0 0 3px 3px;
+  color: #fafafa;
+  border-radius: 2px;
+}
+
+/* End of tag.php */
 
 
+
+
+
+/* Media Queries for Mobile View - Breakpoint 480px */
 
 @media (max-width: 480px) { 
 
@@ -390,28 +489,28 @@ figure img {
     grid-gap: 10px;
   }
 
-  .orbit-post-grid article {
+  .orbit-post-grid article.post-card {
     grid-template-columns: 100px 1fr;
     grid-template-rows: 118px;
   }
 
-  .orbit-post-grid article .content-wrap {
+  .orbit-post-grid article.post-card .content-wrap {
     padding: 0 7px;
   }
 
-  .orbit-post-grid article .title {
+  .orbit-post-grid article.post-card .title {
     font-weight: 600;
     font-size: 1em;
     line-height: 1.18em;
   }
 
-  .orbit-post-grid article .authors {
+  .orbit-post-grid article.post-card .authors {
     font-weight: 500;
     font-size: 0.75em;
     line-height: 0.875em;
   }
 
-  .orbit-post-grid article .meta {
+  .orbit-post-grid article.post-card .meta {
     font-weight: 400;
     font-size: 0.75em;
     line-height: 0.875em;
@@ -419,6 +518,27 @@ figure img {
 
   .orbit-btn-load-parent .btp-btn {
     display: none;
+  }
+
+
+  .tag .overlay-div {
+    padding: 20px 15px;
+  }
+
+
+  .tag .tag-name {
+    margin: 12px 0px 18px 0px;
+  }
+
+  .tag .orbit-post-grid article.post-list {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: unset;
+    max-height: unset;
+    grid-gap: 11px;
+  }
+
+  .tag .orbit-post-grid article.post-list .feat-img {
+    max-height: 115px;
   }
 
 }
