@@ -152,9 +152,11 @@ main .overlay-div {
   padding: 10px;
 }
 .orbit-post-grid article.post-card .title {
+  display: block;
   color: #3d3d3d;
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1.25em;
+  line-height: 25px;
   margin-bottom: 10px;
 }
 .orbit-post-grid article.post-card .authors {
@@ -200,13 +202,8 @@ main .overlay-div {
 /* Single.php */
 
 .single main .overlay-div {
-  margin-top: -132px;
-  margin-bottom: 140px;
-  background-color: #FAFAFA;
   max-width: 830px;
   padding: 71px 85px 100px 85px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .single .post-date {
@@ -430,6 +427,8 @@ figure img {
   margin: unset;
 }
 
+/* End of tag.php */
+
 ul.category-pills  {
   padding: unset;
   list-style: none;
@@ -445,7 +444,36 @@ ul.category-pills  {
   border-radius: 2px;
 }
 
-/* End of tag.php */
+
+/**************************
+*** single-podcast.php ****
+**************************/
+
+.single.single-podcast .overlay-div {
+  max-width: 1108px;
+  padding: 42px 56px 100px 51px;
+}
+
+.single.single-podcast .page-title-separator {
+  margin: 30px 0;
+}
+
+.single.single-podcast article.post-card .meta, .single.single-podcast article.post-card .host {
+  display: block;
+  font-size: 0.875em;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  color: #828282;
+  margin-bottom: 10px;
+}
+
+.single.single-podcast article.post-card .host {
+  color: #bdbdbd;
+} 
+
+
+/* End of single-podcast.php */
 
 
 
@@ -459,7 +487,9 @@ ul.category-pills  {
     height: 140px;
   }
 
-  main .overlay-div {
+  main .overlay-div, 
+  .single main .overlay-div, 
+  .single.single-podcast main .overlay-div {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 27.4px 17px 100px 17px;
@@ -470,7 +500,7 @@ ul.category-pills  {
    line-height: 40px;
   }
 
-  .page-title-seperator {
+  .page-title-separator, .single .page-title-separator {
     margin: 15px 0px 20.46px 0px;
   }
 
