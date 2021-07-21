@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/**
+* Template Name: Full Width Page
+*/
+
+get_header(); ?>
 
 <div class="container">
 	<div class="row">

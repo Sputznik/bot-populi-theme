@@ -9,7 +9,7 @@
 </div>
 <div class="container overlay-div">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-sm-12">
         <?php if(have_posts()): while ( have_posts() ) : the_post(); ?>
             <div class="post-date">
                 <?php _e(get_the_date( 'F j, y' ));?> | <?php echo do_shortcode('[rt_reading_time postfix="min" postfix_singular="min"]'); ?> read
@@ -63,4 +63,4 @@
 	</div>
 </div>
 
-<?php wp_footer(); ?>
+<?php get_footer(); ?>

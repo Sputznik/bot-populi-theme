@@ -9,9 +9,9 @@ class BTP_THEME extends BTP_SINGLETON {
      * class constructor
      */
     public function __construct() {
-        add_action( 'wp_enqueue_scripts', [ $this, 'registerStylesCb' ] );
-        add_action( 'wp_enqueue_scripts', [ $this, 'registerScriptsCb' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueueScriptsCb' ] );
         add_action( 'after_setup_theme', [ $this, 'afterSetupThemeCb' ] );
+        add_action( 'widgets_init', [ $this, 'registerSidebars' ] );
         
         // enqueue scripts for wp admin backend
         add_action( 'admin_enqueue_scripts', array( $this, 'adminScriptsCb' ) );
@@ -58,8 +58,19 @@ class BTP_THEME extends BTP_SINGLETON {
     /**
      * Callback Function for enequeing scripts
      */
-    public function registerScriptsCb()
+    public function enqueueScriptsCb()
     {
+        // Register Styles
+        wp_register_style('bootstrap', BTP_DIR_URI . '/assets/css/bootstrap.min.css', [], false, 'all');
+        wp_register_style('font-awesome', BTP_DIR_URI . '/assets/css/font-awesome-5-15-3/css/all.min.css', false, null );
+        wp_register_style('btp-style', BTP_DIR_URI . '/assets/css/style.css', ['bootstrap'], filemtime( BTP_DIR_PATH . '/assets/css/style.css' ), 'all');
+        
+        // Enqueue Styles
+        wp_enqueue_style('bootstrap');
+        wp_enqueue_style('font-awesome');
+        wp_enqueue_style('btp-style');
+        
+
         //Register Scripts
         wp_register_script('bootstrap-script', BTP_DIR_URI . '/assets/js/bootstrap.bundle.min.js', ['jquery'], false, true);        
         wp_register_script('btp-script', BTP_DIR_URI . '/assets/js/main.js', [], filemtime( BTP_DIR_PATH . '/assets/js/main.js' ), true);
@@ -103,7 +114,28 @@ class BTP_THEME extends BTP_SINGLETON {
 
         // Register Theme Supports
         add_theme_support( 'post-thumbnails' );
+
+        // Opting out of the block-based widgets editor
+        remove_theme_support( 'widgets-block-editor' );
+
+        // Hide admin bar
+        show_admin_bar(false);
         
+    }
+
+
+    function registerSidebars() {
+        register_sidebar(
+            array(
+                'id'            => 'footer-sidebar',
+                'name'          => __( 'Footer Sidebar' ),
+                'description'   => __( 'Content goes into site footer.' ),
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h3 class="widget-title">',
+                'after_title'   => '</h3>',
+            )
+        );
     }
 
 
