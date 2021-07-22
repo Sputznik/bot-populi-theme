@@ -523,6 +523,13 @@ footer {
   background-color: #3D3D3D;
   color: #FFFFFF;
   font-family: 'Poppins', serif;
+  padding: 0px 128px;
+}
+
+.site-logo-footer {
+  display: block;
+  margin-top: 44px;
+  margin-bottom: 22px;
 }
 
 /* end of footer */
