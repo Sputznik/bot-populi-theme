@@ -87,9 +87,11 @@ header {
 }
 
 .navbar-nav .dropdown-menu {
+  margin-top: 0px;
   border: unset;
   background-color: #F2F2F2;
 }
+
 
 
 header nav a {
@@ -546,7 +548,11 @@ footer {
 
 /* end of footer */
 
-
+@media (min-width: 768px) {
+  .dropdown-toggle::after {
+    border:unset;
+  }
+}
 
 
 @media (max-width: 768px) {

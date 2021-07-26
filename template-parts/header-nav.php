@@ -9,8 +9,8 @@
         <i class="fas fa-bars"></i>
     </button>
     <a class="navbar-brand" href="<?php _e(home_url()); ?>">
-        <img class="logo-large d-none d-lg-block" src="<?php _e($logo_large); ?>">
-        <img class="logo-mobile d-lg-none d-xl-none" src="<?php _e($logo); ?>">
+        <img class="logo-large d-none d-md-block d-lg-block" src="<?php _e($logo_large); ?>">
+        <img class="logo-mobile d-md-none d-lg-none d-xl-none" src="<?php _e($logo); ?>">
 
     </a>
     <?php

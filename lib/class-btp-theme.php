@@ -61,7 +61,6 @@ class BTP_THEME extends BTP_SINGLETON {
             'ajax' => admin_url( 'admin-ajax.php' ),
             'logo' => [ 'medium' => BTP_DIR_URI . '/assets/images/BP_without_tagline.png',
                         'large' => BTP_DIR_URI . '/assets/images/BP_with_tagline.png',
-                        'mobile' => BTP_DIR_URI . '/assets/images/logo-mobile.png',
                       ] 
             ]
         );
