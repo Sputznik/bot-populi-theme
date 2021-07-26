@@ -38,25 +38,7 @@ class BTP_THEME extends BTP_SINGLETON {
 
 
     /**
-     * Callback Function for enequeing stylesheets
-     */
-    public function registerStylesCb()
-    {
-        // Register Styles
-        wp_register_style('bootstrap', BTP_DIR_URI . '/assets/css/bootstrap.min.css', [], false, 'all');
-        wp_register_style('font-awesome', BTP_DIR_URI . '/assets/css/font-awesome-5-15-3/css/all.min.css', false, null );
-        wp_register_style('btp-style', BTP_DIR_URI . '/assets/css/style.css', ['bootstrap'], filemtime( BTP_DIR_PATH . '/assets/css/style.css' ), 'all');
-        
-        // Enqueue Styles
-        wp_enqueue_style('bootstrap');
-        wp_enqueue_style('font-awesome');
-        wp_enqueue_style('btp-style');
-        
-    }
-
-
-    /**
-     * Callback Function for enequeing scripts
+     * Callback Function for enequeing scripts & styles
      */
     public function enqueueScriptsCb()
     {
@@ -74,6 +56,15 @@ class BTP_THEME extends BTP_SINGLETON {
         //Register Scripts
         wp_register_script('bootstrap-script', BTP_DIR_URI . '/assets/js/bootstrap.bundle.min.js', ['jquery'], false, true);        
         wp_register_script('btp-script', BTP_DIR_URI . '/assets/js/main.js', [], filemtime( BTP_DIR_PATH . '/assets/js/main.js' ), true);
+
+        wp_localize_script( 'btp-script', 'btp_settings', [ 
+            'ajax' => admin_url( 'admin-ajax.php' ),
+            'logo' => [ 'medium' => BTP_DIR_URI . '/assets/images/BP_without_tagline.png',
+                        'large' => BTP_DIR_URI . '/assets/images/BP_with_tagline.png',
+                        'mobile' => BTP_DIR_URI . '/assets/images/logo-mobile.png',
+                      ] 
+            ]
+        );
 
         
         //Enqueue Scripts

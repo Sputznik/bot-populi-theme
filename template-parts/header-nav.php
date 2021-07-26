@@ -1,13 +1,18 @@
 <?php
-    $logo = BTP_DIR_URI . '/assets/images/logo.png';
-    $logo_mobile = BTP_DIR_URI . '/assets/images/logo-mobile.png';
+    $logo = BTP_DIR_URI . '/assets/images/BP_without_tagline.png';
+    $logo_large = BTP_DIR_URI . '/assets/images/BP_with_tagline.png';
+
 ?>
 
 <nav class="navbar navbar-expand-md fixed-top" role="navigation">
     <button class="navbar-toggler" type="button" >
         <i class="fas fa-bars"></i>
     </button>
-    <a class="navbar-brand" href="<?php _e(home_url()); ?>"><img src="<?php _e($logo_mobile); ?>"></a>
+    <a class="navbar-brand" href="<?php _e(home_url()); ?>">
+        <img class="logo-large d-none d-lg-block" src="<?php _e($logo_large); ?>">
+        <img class="logo-mobile d-lg-none d-xl-none" src="<?php _e($logo); ?>">
+
+    </a>
     <?php
     $html = "<li class='li-close-btn'>&times;</li>";
 
@@ -24,5 +29,5 @@
         'walker'            => new WP_Bootstrap_Navwalker(),
         ] );
     ?>
-    <a href="#"><i class="fas fa-search"></i></a>
+    <a class="nav-search-item" href="#"><i class="fas fa-search"></i></a>
 </nav>

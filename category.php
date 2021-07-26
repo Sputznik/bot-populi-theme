@@ -4,8 +4,7 @@
     $image = get_term_meta($category->term_id, 'btp_category_image', true);
 ?>
 
-<div class="featured" style="background:linear-gradient(
-360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url('<?php _e($image);?>')">
+<div class="featured" style="background-image: url('<?php _e($image);?>')">
     <div class="featured-overlay"></div>
 </div>
 <div class="container overlay-div">
