@@ -175,7 +175,7 @@ main .overlay-div {
   grid-template-columns: 1fr;
   grid-template-rows: 245px 1fr;
   grid-template-areas: "image" "content";
-  max-height: 400px;
+  min-height: 400px;
   overflow: hidden;
   background-color: white;
 }
@@ -211,9 +211,10 @@ main .overlay-div {
 }
 .orbit-post-grid article.post-card .title {
   display: block;
+  min-height: 100px;
   color: #3d3d3d;
   font-weight: 600;
-  font-size: 1.25em;
+  font-size: 1.2em;
   line-height: 25px;
   margin-bottom: 10px;
 }
@@ -260,8 +261,26 @@ main .overlay-div {
 /* Single.php */
 
 .single main .overlay-div {
+  position: relative;
   max-width: 830px;
   padding: 71px 85px 100px 85px;
+}
+
+
+.progress-container {
+  position: sticky;
+  top: 100px;
+  transform: translateX(-95px);
+  width: 10px;
+  height: 235px;
+  background: #BDBDBD;
+  }
+
+.progress-indicator {
+  width: 10px;
+  height:0%;
+  background-color: #9F00C5;
+  
 }
 
 .single .post-date {
@@ -318,7 +337,7 @@ main .overlay-div {
 }
 
 .single .page-title-separator {
-  margin: 10px -85px 30px -85px;
+  margin: 10px -85px 0px -85px;
   border: 1px solid #E0E0E0;
 }
 

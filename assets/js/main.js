@@ -48,6 +48,20 @@ jQuery(document).ready(function($){
             $dropdown.off("mouseenter mouseleave");
         }
     });
+
+
+    window.onscroll = function() {
+        var indicator = document.querySelector(".progress-indicator");
+        
+        if(indicator) {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+        
+            indicator.style.height = scrolled + "%";
+        }
+    };
+
         
     
 

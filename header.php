@@ -13,7 +13,7 @@
 
     <header>
         <!-- Navigation Bar -->
-        <?php get_template_part( 'template-parts/header-nav' ); ?>
+        <?php get_template_part( 'template-parts/header-nav' ); ?>        
     </header>
     
     <!-- Content Section -->

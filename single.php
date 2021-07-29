@@ -6,9 +6,10 @@
 <div class="featured" style="background-image: url('<?php _e($image);?>')">
     <div class="featured-overlay"></div>
 </div>
+
 <div class="container overlay-div">
-	<div class="row">
-		<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-12">
         <?php if(have_posts()): while ( have_posts() ) : the_post(); ?>
             <div class="post-date">
                 <?php _e(get_the_date( 'F j, y' ));?> | <?php echo do_shortcode('[rt_reading_time postfix="min" postfix_singular="min"]'); ?> read
@@ -33,6 +34,9 @@
             </div>
 
             <div class="page-title-separator"></div>
+            <div class="progress-container">
+                <div class="progress-indicator"></div>
+            </div>
             
             <div class="post-content"><?php the_content(); ?></div>
 
@@ -58,8 +62,8 @@
             <?php get_template_part('template-parts/post/author-box')?>
 
         <?php endwhile; endif; ?>    
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>
