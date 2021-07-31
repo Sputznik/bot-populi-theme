@@ -20,6 +20,7 @@ $inc_files = [
     'lib/class-btp-theme.php',
     'lib/btp-cpt/btp-cpt.php',
     'lib/class-btp-taxonomy-field.php',
+    'lib/class-btp-shortcode.php',
 ];
 
 foreach ($inc_files as $file_to_include ) {
@@ -63,4 +64,26 @@ function dd($data, $die = true)
         wp_die();
     }
 
+}
+
+
+/**
+ * Returns list of episodes for a given podcast series
+ */
+function getEpisodesList( $podcast_id ) {
+    if( ! $podcast_id ) {
+        return false;
+    }
+    $episodes = get_children( [
+        'post_parent' => $podcast_id,
+        'order' => 'ASC',
+    ], ARRAY_A );
+
+
+
+    foreach ($episodes as $key => $episode) {
+        $episodes[$key]['episode_number'] = get_post_meta($episode['ID'], 'btp_episode_number', true);
+    }
+
+    return $episodes;
 }

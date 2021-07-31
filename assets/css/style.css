@@ -31,6 +31,10 @@ button {
   text-transform: uppercase;
 }
 
+.dropdown.show button::after {
+  transform:rotate(180deg);
+}
+
 .li-close-btn {
   display: none;
   cursor: pointer;
@@ -268,6 +272,7 @@ main .overlay-div {
 
 
 .progress-container {
+  float: left;
   position: sticky;
   top: 100px;
   transform: translateX(-95px);
@@ -339,6 +344,10 @@ main .overlay-div {
 .single .page-title-separator {
   margin: 10px -85px 0px -85px;
   border: 1px solid #E0E0E0;
+}
+
+.single .post-content {
+  margin-top: 30px;
 }
 
 
@@ -431,6 +440,73 @@ figure img {
 } 
 
 /* End of Single.php */
+
+
+/*******************************
+****** single-episode.php ******
+********************************/
+
+.single-episode main .overlay-div {
+      max-width: 1108px;
+    padding: 42px 56px 100px 51px;
+}
+
+.single-episode .page-title-separator {
+  margin: 30px 0;
+}
+
+.single-episode .post-title {
+  margin: unset;
+  color: #9F00C5;
+}
+
+.single-episode .btp-btn {
+  margin-top: 30px;
+}
+
+.episode-list-container {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+.episode-list-container .title {
+  padding: 13px 13px 0 13px;
+  text-transform: uppercase;
+  color: #9F00C5;
+  font-size: 1em;
+  font-family: Poppins;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.episode-list-container tr.active {
+  background-color: #9F00C5;
+}
+
+.episode-list-container td {
+  color: #3D3D3D;
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 21px;
+}
+.episode-list-container td a {
+  color: #3D3D3D;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.episode-list-container tr.active td, .episode-list-container tr.active td a{
+  color: #FAFAFA;
+}
+
+.episode-list-container td:first-child {
+ min-width: 70px;
+}
+
+.episode-list-container td:nth-child(2) {
+  padding-left: unset;
+}
+
 
 
 
@@ -670,6 +746,7 @@ footer {
   .orbit-post-grid article.post-card {
     grid-template-columns: 100px 1fr;
     grid-template-rows: 118px;
+    min-height: unset;
   }
 
   .orbit-post-grid article.post-card .content-wrap {
@@ -677,6 +754,7 @@ footer {
   }
 
   .orbit-post-grid article.post-card .title {
+    min-height: unset;
     font-weight: 600;
     font-size: 1em;
     line-height: 1.18em;
@@ -726,6 +804,10 @@ footer {
   footer .container {
     max-width: 100%;
     padding: 0px 17px;
+  }
+
+  .single-episode .content-row.row {
+    flex-direction: column-reverse;
   }
 
 }
