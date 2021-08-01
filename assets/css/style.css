@@ -31,9 +31,11 @@ button {
   text-transform: uppercase;
 }
 
-.dropdown.show button::after {
+.dropdown.show .dropdown-toggle::after, a[aria-expanded='true'] .fa-angle-down, [aria-expanded="true"] .fa-angle-down{
   transform:rotate(180deg);
 }
+
+
 
 .li-close-btn {
   display: none;
@@ -462,6 +464,7 @@ figure img {
 
 .single-episode .btp-btn {
   margin-top: 30px;
+  font-size: .875em;
 }
 
 .episode-list-container {
@@ -506,6 +509,39 @@ figure img {
 .episode-list-container td:nth-child(2) {
   padding-left: unset;
 }
+
+.episode-list-container.mobile {
+  margin-top: 15px;
+}
+
+.episode-list-container.mobile {
+  margin-bottom: 15px;
+  border: 1px solid #9F00C5;
+}
+
+.episode-list-container.mobile .table {
+  margin-bottom: 0;
+}
+
+.episode-list-container.mobile .title, .episode-list-container.mobile .title.collapsed {
+  background-color: #9F00C5;
+  color: #FAFAFA;
+  font-weight: 600;
+  font-size: .875em;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+} 
+
+.episode-list-container.mobile .title[aria-expanded='true'] {
+  background-color: #fff;
+  color: #9F00C5;
+  
+}
+
+.episode-list-container.mobile .fa-angle-down {
+  margin-top: 5px;
+}
+
 
 
 
@@ -650,7 +686,7 @@ footer {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   header {
     margin-bottom: 60px;

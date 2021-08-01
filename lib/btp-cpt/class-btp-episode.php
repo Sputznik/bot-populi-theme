@@ -70,8 +70,9 @@ class BTP_EPISODE extends BTP_SINGLETON {
             ],
             
             [ 
-              'label' => 'Episode Url',
-              'key'   => 'btp_episode_url'
+              'label' => 'Episode Url (SoundCloud Embed code)',
+              'key'   => 'btp_episode_url',
+              'type'  => 'textarea',
             ],
 
         ];
@@ -90,7 +91,12 @@ class BTP_EPISODE extends BTP_SINGLETON {
         foreach ($fields as $meta) : ?>
             <div style='margin-bottom: 15px;'>
                 <label> <?php echo $meta['label']?> </label>
-                <input type="text" name="<?php echo $meta['key']?>" value="<?php echo get_post_meta($post->ID, $meta['key'], true)?>"> 
+                <?php if( isset($meta['type']) && 'textarea' == $meta['type'] ) { ?>
+                    <textarea name="<?php echo $meta['key']?>" cols="30" rows="10"><?php echo get_post_meta($post->ID, $meta['key'], true);?></textarea>    
+                <?php } else { ?>
+                    <input type="text" name="<?php echo $meta['key']?>" value="<?php echo get_post_meta($post->ID, $meta['key'], true)?>"> 
+                <?php } ?>
+                
             </div> <?php
         endforeach;
         
