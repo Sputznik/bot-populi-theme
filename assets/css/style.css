@@ -842,8 +842,8 @@ footer {
     padding: 0px 17px;
   }
 
-  .single-episode .content-row.row {
+  /* .single-episode .content-row.row {
     flex-direction: column-reverse;
-  }
+  } */
 
 }

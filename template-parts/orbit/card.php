@@ -1,7 +1,7 @@
 <?php
     $post_id = get_the_ID();
     $permalink = get_the_permalink();
-    $thumbnail = get_the_post_thumbnail_url(get_the_ID());
+    $thumbnail = get_the_post_thumbnail_url($post_id);
 ?>
 
 <a class="feat-img" style="background-image:url('<?php _e($thumbnail);?>')" data-id="<?php _e( $post_id );?>" href="<?php _e($permalink);;?>"></a>
