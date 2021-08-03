@@ -30,9 +30,10 @@ foreach ($inc_files as $file_to_include ) {
 
 // ADD EXTRA FIELDS TO THE ORBIT QUERY ATTS
 add_filter('orbit_query_atts', function( $atts ){
-    $atts['back_btn'] = '0';
-    $atts['back_btn_title'] = '';
-    $atts['back_btn_slug'] = '';
+    $atts['button'] = '0';
+    $atts['button_title'] = '';
+    $atts['button_slug'] = '';
+    $atts['posts_per_frame'] = 6;
     return $atts;
 });
 

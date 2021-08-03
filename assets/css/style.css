@@ -170,7 +170,49 @@ header nav a:active {
   text-transform: uppercase;
 }
 
+.btp-content-slider .carousel-indicators {
+  bottom: -33px;
+  right: unset;
+  margin-left: unset;
+  margin-right: unset;
+  justify-content: space-evenly;
+}
 
+.btp-content-slider .carousel-indicators li {
+  text-indent: unset;
+  margin-left: unset;
+  background-color: unset;
+  background-clip: unset;
+  border-top: unset;
+  border-bottom: unset;
+  opacity: unset;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  color: #828282;
+  width: auto;
+  height: auto;
+}
+
+.btp-content-slider .carousel-indicators li.active {
+  color: #a566c6;
+  font-size: 18px;
+}
+
+.btp-content-slider article.post-card.read-more {
+  grid-template-rows: 1fr;
+  grid-template: unset;
+  align-items: center;
+  justify-content: center;
+}
+
+.btp-content-slider article.post-card.read-more a {
+  color: #9F00C5;
+  font-size: 1.25em;
+  font-weight: 600;
+} 
 
 
 /* end of home page post slider */
