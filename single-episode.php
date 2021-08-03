@@ -29,13 +29,13 @@
 
                         <!-- Render Episode List for Mobile View -->
                         <div class="d-block d-md-none episode-list-container mobile">
-                            <div class="title" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <div class="title" data-toggle="collapse" data-target="#collapsableEpisodeList" aria-expanded="false" aria-controls="collapsableEpisodeList">
                                 Episodes
                                 <i class="fas fa-angle-down float-right"></i>
                             </div>
                             
                             <?php if( is_array($episodes) && count($episodes) ) : ?>
-                            <table class="table collapse" id="collapseExample">
+                            <table class="table collapse" id="collapsableEpisodeList">
                             <?php foreach( $episodes as $episode ) : ?>
                                 <tr class="<?php $current_post_id == (int) $episode['ID'] ? _e('active') : '';?>">
                                     <td>Ep. <?php _e($episode['episode_number']);?></td>

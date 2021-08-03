@@ -120,6 +120,63 @@ header nav a:active {
   color: #9F00C5;
 }
 
+/* Homepage Post Slider */
+.slider-wrapper {
+  margin-bottom: 40px;
+}
+
+#btp-homepage-slider .carousel-indicators {
+  bottom: -50px;
+}
+
+#btp-homepage-slider .carousel-indicators li {
+  background-color:transparent;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 2px solid #9F00C5;
+}
+
+#btp-homepage-slider .carousel-indicators li.active {
+  background-color: #9f00c5;
+}
+
+#btp-homepage-slider .carousel-item {
+  height: 500px;
+}
+
+#btp-homepage-slider .carousel-caption {
+  bottom: 30px;
+}
+
+#btp-homepage-slider .carousel-caption .title {
+  color: #FAFAFA;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 1.875em;
+  line-height: 38px;
+  max-height: 100px;
+  margin-bottom: 68px;
+}
+
+#btp-homepage-slider .carousel-caption a {
+  text-decoration: none;
+  border: 1px solid #fafafa;
+  color: #fafafa;
+  font-size: .875em;
+  font-weight: 600;
+  font-family: Poppins;
+  padding: 12px 30px;
+  text-transform: uppercase;
+}
+
+
+
+
+/* end of home page post slider */
+
+
+
 /* FEATURED/BANNER IMAGE used on homepage slider, single templates, category templates */
 .featured {
   height: 500px;
@@ -702,7 +759,6 @@ footer {
     color: #9F00C5;
   }
 
-
   header nav i {
     color: #FFF;
   }
@@ -741,6 +797,17 @@ footer {
     right: 30px;
     font-size: 2rem;
     color: #9F00C5;
+  }
+
+
+  #btp-homepage-slider .carousel-caption .title {
+    font-size: 1.25em;
+    line-height: 26px;
+    margin-bottom: 35px;
+  }
+
+  #btp-homepage-slider .carousel-item {
+    height: 426px;
   }
 
   .featured {
