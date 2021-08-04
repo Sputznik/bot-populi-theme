@@ -35,7 +35,7 @@ class BTP_VIDEO extends BTP_SINGLETON {
                 'id'		=> 'btp-video-metafields',
                 'title'	=> 'Additional Information',
                 'fields'	=> [
-                    'video_url' => [
+                    'btp_video_url' => [
                     'type'      => 'text',
                     'text'      => 'Video Url'
                     ],

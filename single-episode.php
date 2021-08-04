@@ -13,7 +13,7 @@
             <?php if(have_posts()): while ( have_posts() ) : the_post(); 
                 $current_post_id = get_the_ID();
                 $post_parent_id = wp_get_post_parent_id( $current_post_id );
-                $episodes = getEpisodesList($post_parent_id);
+                $episodes = btp_get_episodes_list($post_parent_id);
                 $soundcloud_embed = get_post_meta($current_post_id, 'btp_episode_url',true);
             ?>
             <h1 class="post-title"><?php the_title();?></h1>

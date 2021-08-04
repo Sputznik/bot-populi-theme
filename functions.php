@@ -71,20 +71,39 @@ function dd($data, $die = true)
 /**
  * Returns list of episodes for a given podcast series
  */
-function getEpisodesList( $podcast_id ) {
+function btp_get_episodes_list( $podcast_id ) {
     if( ! $podcast_id ) {
         return false;
     }
+    
     $episodes = get_children( [
         'post_parent' => $podcast_id,
         'order' => 'ASC',
     ], ARRAY_A );
-
-
 
     foreach ($episodes as $key => $episode) {
         $episodes[$key]['episode_number'] = get_post_meta($episode['ID'], 'btp_episode_number', true);
     }
 
     return $episodes;
+}
+
+/** Reuturns list of videos exluding the currently passed id */
+function btp_get_videos( $id ) {   
+    
+    $args = [
+        'post_type' => 'video',
+        'post_status' => 'public',
+        'posts_per_page' => 4,
+        'post__not_in' => [$id],
+    ];
+
+    $query = new WP_Query($args);
+
+    if( isset($query->posts) ) {
+        return $query->posts;
+    }
+
+    return [];
+    
 }
