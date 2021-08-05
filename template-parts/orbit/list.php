@@ -13,7 +13,7 @@
         <div class="post-excerpt"><?php the_excerpt();?></div>    
     </div>
 	<div class="meta">
-        <?php getCategories($post_id);?>
+        <?php btp_get_categories($post_id);?>
         <?php _e(get_the_date( 'F j' ));?> | <?php echo do_shortcode('[rt_reading_time postfix="min" postfix_singular="min"]'); ?> read | <?php _e(get_the_author());?>
     </div>
 </div>

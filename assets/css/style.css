@@ -10,6 +10,11 @@ p, p a {
   font-family: 'Merriweather', serif;
   font-size: 1em;
 }
+
+a {
+  color: #3D3D3D;
+}
+
 h1 { font-size: 3em; line-height: 60px; }
 h2 { font-size: 2em; line-height: 48px; }
 h3 { font-size: 1.8em; line-height: 42px; }
@@ -719,6 +724,13 @@ figure img {
   align-content: space-between;
 }
 
+.tag .orbit-post-grid article.post-list .content-wrap .title {
+  color: #3D3D3D;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 25px;
+}
+
 .tag .orbit-post-grid article.post-list .content-wrap .post-excerpt {
   font-weight: 300;
   font-size: 1em;
@@ -784,7 +796,33 @@ ul.category-pills  {
 } 
 /* End of single-podcast.php */
 
-/* single-video.php */
+
+/********************************
+******* single-video.php ********
+*********************************/
+
+.single-video main .overlay-div {
+  max-width: 1108px;
+  margin-top: 104px;
+  padding: 42px 56px 100px 51px;
+}
+
+.single-video .page-title-separator {
+  margin: 30px 0;
+}
+
+.single-video .post-title {
+  margin: unset;
+  margin-top: 65px;
+  color: #9F00C5;
+}
+
+.single-video iframe {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+}
+
 .btp-videos .feat-img {
   position: relative;
   height: 244px;
@@ -810,6 +848,74 @@ ul.category-pills  {
   transform: translate(-50%,-50%);
   color: #9F00C5;
   font-size: 40px;
+  cursor: pointer;
+}
+
+
+.single-video .video-list-container {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+.single-video .video-list-container .title{
+  padding: unset;
+  text-transform: uppercase;
+  color: #3d3d3d;
+  font-size: .875em;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.single-video .video-list-container ul {
+  list-style-type: none;
+  padding: unset;
+}
+
+.single-video .video-list-container .video-item{
+  display: flex;
+  column-gap: 12px;
+  padding: 12px 10px;
+  border-top: 1px solid #dee2e6;;
+}
+
+.single-video .video-list-container .video-item span.author {
+  color: #BDBDBD;
+  font-size: .875em;
+  line-height: 16px;
+  font-weight: normal;
+}
+
+.single-video .video-list-container .feat-img{
+  position: relative;
+  width: 100%;
+  max-width: 135px;
+  height: 75px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.single-video .video-list-container .img-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba( 0,0,0,0.6 );
+}
+
+.single-video .video-list-container .video-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.single-video .video-list-container .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #9F00C5;
+  font-size: 2em;
   cursor: pointer;
 }
 
@@ -999,12 +1105,34 @@ footer {
     max-height: 115px;
   }
 
+  .tag .orbit-post-grid article.post-list .content-wrap .title {
+    color: #3D3D3D;
+    font-size: 1em;
+    line-height: 19px;
+  } 
+
+  .tag .orbit-post-grid article.post-list .content-wrap .post-excerpt {
+    font-size: .875em;
+    line-height: 24px;
+  }
+
   .btp-videos .feat-img {
     height: unset;
   }
 
   .btp-videos .play-btn {
     font-size: 25px;
+  }
+
+  .single-video .post-title{
+    font-size: 2.25em;
+    line-height: 40px;
+    margin-top: unset;
+  }
+
+  .single-video iframe {
+    max-width: unset;
+    height: 180px;
   }
 
   footer {

@@ -1,12 +1,6 @@
 <?php 
     get_header(); 
-    $image = get_the_post_thumbnail_url();
 ?>
-
-<div class="featured" style="background-image: url('<?php _e($image);?>')">
-    <div class="featured-overlay"></div>
-</div>
-
 <div class="container overlay-div">
     <div class="row">
         <div class="col-md-12">
@@ -28,28 +22,37 @@
 
                         <?php the_content(); ?>
                     </div>
-                    <?php do_shortcode('[btp_back_btn text="BACK TO VIDEOS" slug="'. get_the_permalink(get_page_by_path('videos')) .'"]');?>
                 </div>
                 <div class="col-md-4">
-                    <div class="episode-list-container">
+                    <div class="video-list-container">
                         <div class="title">Other Videos</div>
                         <?php if( is_array($videos) && count($videos) ) : ?>
 
-                        <table class="table">
-                        
-                        <?php foreach( $videos as $video ) : ?>
-                            <tr class="<?php $current_post_id == (int) $video->ID ? _e('active') : '';?>">
-                                <td><?php //_e($video['episode_number']);?></td>
-                                <td><a href="<?php _e(get_permalink($video->ID));?>"> <?php _e($video->post_title);?> </a></td>
-                            </tr>
+                        <ul>
+                        <?php foreach( $videos as $video ) :?>
+                            <li class="video-item"> <?php 
+                                $post_id = $video->ID;
+                                $permalink = get_the_permalink( $post_id );
+                                $thumbnail = get_the_post_thumbnail_url($post_id); 
+                                include __DIR__.'/template-parts/commons/video-thumbnail-overlay.php'; ?>
+                                <div class="d-flex flex-column justify-content-between">
+                                    <a class="title d-block" href="<?php _e($permalink);?>"> <?php _e($video->post_title);?> </a>
+                                    <span class="d-block author"><?php echo get_the_author_meta('display_name', $video->post_author);?></span>
+                                </div>
+                            </li>
                         <?php endforeach;?>
                         
-                        </table>
+                        </ul>
                         <?php endif;?>
                     </div>
                 </div>
             </div>                
-            <?php endwhile; endif; ?>    
+            <?php endwhile; endif; ?> 
+            <div class="row">
+                <div class="col-md-12 mt-4">
+                <?php do_shortcode('[btp_back_btn text="BACK TO VIDEOS" slug="'. get_the_permalink(get_page_by_path('videos')) .'"]');?>
+                </div>
+            </div>   
         </div>
     </div>
 </div>

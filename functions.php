@@ -39,7 +39,7 @@ add_filter('orbit_query_atts', function( $atts ){
 
 
 
-function getCategories($post_id)
+function btp_get_categories($post_id)
 {
     $categories = get_the_category($post_id);
 
@@ -93,7 +93,7 @@ function btp_get_videos( $id ) {
     
     $args = [
         'post_type' => 'video',
-        'post_status' => 'public',
+        'post_status' => 'publish',
         'posts_per_page' => 4,
         'post__not_in' => [$id],
     ];
