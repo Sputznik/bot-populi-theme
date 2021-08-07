@@ -5,6 +5,7 @@ body {
   font-size: 16px;
   line-height: 26px;
   color: #3d3d3d;
+  background-color: #FAFAFA;
 }
 p, p a {
   font-family: 'Merriweather', serif;
@@ -15,7 +16,7 @@ a {
   color: #3D3D3D;
 }
 
-h1 { font-size: 3em; line-height: 60px; }
+h1 { font-size: 3em; line-height: 60px; font-weight: 600;}
 h2 { font-size: 2em; line-height: 48px; }
 h3 { font-size: 1.8em; line-height: 42px; }
 h4 { font-size: 1.6em; line-height: 36px; }
@@ -53,7 +54,7 @@ button {
   margin: 0 auto;.li-close-btn
 } */
 
-/* Header styles */
+/* --------------- Header styles -------------------- */
 header {
   text-transform: uppercase;
   margin-bottom: 100px;
@@ -103,8 +104,6 @@ header {
   background-color: #F2F2F2;
 }
 
-
-
 header nav a {
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -125,7 +124,7 @@ header nav a:active {
   color: #9F00C5;
 }
 
-/* Homepage Post Slider */
+/* ---------------- Homepage Post Slider ------------ */
 .slider-wrapper {
   margin-bottom: 40px;
 }
@@ -175,7 +174,7 @@ header nav a:active {
   text-transform: uppercase;
 }
 
-/* so tabs override */
+/* ---------- so tabs override ---------------------- */
 .sow-tabs-tab-container, .sow-tabs-tab-selected {
   background-color: transparent!important;
 }
@@ -190,14 +189,14 @@ header nav a:active {
 
 .sow-tabs-tab-selected .sow-tabs-title {
   font-weight: 600;
-  border-bottom: 9px solid #a566c6;
+  border-bottom: 9px solid #9F00C5;
   font-size: 2em;
   line-height: 32px;
   padding-bottom: 7px;
-  color: #a566c6;
+  color: #9F00C5;
 }
 
-
+/* --------------------- CONTENT SLIDER/CAROUSEL ---------------- */
 .btp-content-slider .carousel-indicators {
   bottom: -33px;
   right: unset;
@@ -240,17 +239,15 @@ header nav a:active {
   color: #9F00C5;
   font-size: 1.25em;
   font-weight: 600;
-} 
+}
 
-
-/* end of home page post slider */
 
 
 
 /* FEATURED/BANNER IMAGE used on homepage slider, single templates, category templates */
 .featured {
   height: 500px;
-  background-repeat: no-repeat !important; 
+  background-repeat: no-repeat !important;
   background-attachment: scroll !important;
   background-position: center center !important;
   background-size: cover !important;
@@ -273,7 +270,7 @@ main .overlay-div {
   padding: 42px 56px 100px 51px;
   margin-left: auto;
   margin-right: auto;
-  
+
 }
 
 .page-title {
@@ -386,19 +383,14 @@ main .overlay-div {
 
 /* Orbit template style = list */
 
-/* End of Orbit template style = card */
 
-
-
-
-/* Single.php */
+/* -------------------- Single.php ---------------------- */
 
 .single main .overlay-div {
   position: relative;
   max-width: 830px;
   padding: 71px 85px 100px 85px;
 }
-
 
 .progress-container {
   float: left;
@@ -414,7 +406,7 @@ main .overlay-div {
   width: 10px;
   height:0%;
   background-color: #9F00C5;
-  
+
 }
 
 .single .post-date {
@@ -440,7 +432,7 @@ main .overlay-div {
 }
 
 .single .post-author-link {
-  font-family: 'Poppins', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 1em;
   color: #828282;
@@ -483,8 +475,8 @@ main .overlay-div {
 blockquote, .wp-block-quote {
   margin: 50px 0px 50px 60px;
   padding-left: 20px;
-  font-family: Merriweather;
-  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
   font-size: 1.25em;
   line-height: 32px;
   color: #9F00C5;
@@ -566,18 +558,16 @@ figure img {
   font-size: 12px;
   line-height: 18px;
   border-width: 1.5px;
-} 
+}
 
 /* End of Single.php */
 
 
-/*******************************
-****** single-episode.php ******
-********************************/
+/*---------------- single-episode.php -----------------*/
 
 .single-episode main .overlay-div {
-      max-width: 1108px;
-    padding: 42px 56px 100px 51px;
+    max-width: 1108px;
+    padding: 42px 54px 100px 54px;
 }
 
 .single-episode .page-title-separator {
@@ -657,12 +647,12 @@ figure img {
   font-size: .875em;
   padding-bottom: 10px;
   margin-bottom: 0;
-} 
+}
 
 .episode-list-container.mobile .title[aria-expanded='true'] {
   background-color: #fff;
   color: #9F00C5;
-  
+
 }
 
 .episode-list-container.mobile .fa-angle-down {
@@ -673,9 +663,7 @@ figure img {
 
 
 
-/****************
-**** tag.php ****
-****************/
+/*-------------------tag.php -------------------*/
 
 .tag .overlay-div {
   margin-top: 5px;
@@ -687,7 +675,7 @@ figure img {
   display: inline-block;
   background-color: #FF7A30;
   padding: 8px 10px 9px 10px;
-  font-family: 'Poppins', serif;
+  font-family: 'Poppins', san-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
@@ -768,13 +756,11 @@ ul.category-pills  {
 }
 
 
-/**************************
-*** single-podcast.php ****
-**************************/
+/* ---------------- single-podcast.php ---------------------*/
 
 .single.single-podcast .overlay-div {
   max-width: 1108px;
-  padding: 42px 56px 100px 51px;
+  padding: 42px 54px 100px 54px;
 }
 
 .single.single-podcast .page-title-separator {
@@ -793,18 +779,16 @@ ul.category-pills  {
 
 .single.single-podcast article.post-card .host {
   color: #bdbdbd;
-} 
+}
 /* End of single-podcast.php */
 
 
-/********************************
-******* single-video.php ********
-*********************************/
+/*------------------- single-video.php *------------------------*/
 
 .single-video main .overlay-div {
   max-width: 1108px;
   margin-top: 104px;
-  padding: 42px 56px 100px 51px;
+  padding: 42px 54px 100px 54px;
 }
 
 .single-video .page-title-separator {
@@ -922,7 +906,7 @@ ul.category-pills  {
 /* end of single-video.php */
 
 
-/* footer */
+/*------------------- footer ------------------- */
 footer {
   background-color: #3D3D3D;
   color: #FFFFFF;
@@ -935,9 +919,28 @@ footer {
   margin-top: 44px;
   margin-bottom: 22px;
 }
+footer p {
+		font-family:'Poppins', sans-serif;
+}
+footer h3.widget-title {
+		font-size:18px;
+		font-weight:600;
+}
+#footer-menu ul {
+		list-style:none;
+		padding:0;
+}
+#footer-menu ul li {
+		margin-bottom:20px
+}
+#footer-menu ul li a {
+		color: white;
+		text-transform:uppercase;
+}
 
 /* end of footer */
 
+/* -------------------------- MEDIA QUERIES ------------------------- */
 @media (min-width: 768px) {
   .dropdown-toggle::after {
     border:unset;
@@ -950,7 +953,7 @@ footer {
   header {
     margin-bottom: 60px;
   }
-  
+
   .navbar {
     height: 60px;
     padding: 0px 17px;
@@ -1016,8 +1019,8 @@ footer {
     height: 140px;
   }
 
-  main .overlay-div, 
-  .single main .overlay-div, 
+  main .overlay-div,
+  .single main .overlay-div,
   .single.single-podcast main .overlay-div {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -1042,7 +1045,7 @@ footer {
   .orbit-posts-wrapper {
     margin-top: 24px;
   }
-  
+
   .orbit-post-grid {
     grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -1109,7 +1112,7 @@ footer {
     color: #3D3D3D;
     font-size: 1em;
     line-height: 19px;
-  } 
+  }
 
   .tag .orbit-post-grid article.post-list .content-wrap .post-excerpt {
     font-size: .875em;
