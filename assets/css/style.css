@@ -59,6 +59,7 @@ header {
   margin-bottom: 100px;
 }
 
+
 .navbar {
   height: 100px;
   background: #F2F2F2;
@@ -103,6 +104,10 @@ header {
   background-color: #F2F2F2;
 }
 
+.dropdown-item.active, .dropdown-item:active, .dropdown-item:hover {
+  background-color: #9F00C5;
+  color: #FAFAFA;
+}
 
 
 header nav a {
@@ -939,8 +944,21 @@ footer {
 /* end of footer */
 
 @media (min-width: 768px) {
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar-expand-md .navbar-collapse {
+    max-width: 1000px;
+  }
+
   .dropdown-toggle::after {
     border:unset;
+  }
+
+  footer .container {
+    max-width: 1000px;
   }
 }
 

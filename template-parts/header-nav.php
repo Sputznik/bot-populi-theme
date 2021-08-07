@@ -3,7 +3,6 @@
     $logo_large = BTP_DIR_URI . '/assets/images/BP_with_tagline.png';
 
 ?>
-
 <nav class="navbar navbar-expand-md fixed-top" role="navigation">
     <button class="navbar-toggler" type="button" >
         <i class="fas fa-bars"></i>
