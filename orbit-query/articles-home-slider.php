@@ -12,15 +12,15 @@
         <?php while( $this->query->have_posts() ) : $this->query->the_post();
             $featured_image = get_the_post_thumbnail_url(get_the_ID()); 
         ?>
-        <div class="carousel-item <?php $temp ? _e('active'): '';?>" style="background-image:linear-gradient(
-    360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url('<?php _e($featured_image);?>'); background-size: cover;
-    background-repeat: no-repeat;" >
-        <div class="carousel-caption">
-            <h3 class="title"><?php the_title();?></h3>
-            <a href="<?php the_permalink();?>" type="button" class="btn">Read More</a>
-            
-        </div>
-        </div>
+            <div class="carousel-item <?php $temp ? _e('active'): '';?>" style="background-image:linear-gradient(
+        360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url('<?php _e($featured_image);?>'); background-size: cover;
+        background-repeat: no-repeat;" >
+                <div class="carousel-caption">
+                    <h3 class="title"><?php the_title();?></h3>
+                    <a href="<?php the_permalink();?>" type="button" class="btn">Read More</a>                    
+                </div>
+            </div>
         <?php $temp=false; endwhile;?>
-    </div>
+        </div>
+    </div>    
 </div>
