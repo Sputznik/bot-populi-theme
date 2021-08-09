@@ -4,6 +4,7 @@
 
 ?>
 <nav class="navbar navbar-expand-md fixed-top" role="navigation">
+  <div class="container">
     <button class="navbar-toggler" type="button" >
         <i class="fas fa-bars"></i>
     </button>
@@ -29,4 +30,5 @@
         ] );
     ?>
     <a class="nav-search-item" href="#"><i class="fas fa-search"></i></a>
+  </div>
 </nav>
