@@ -58,7 +58,7 @@ button {
 .container {
   max-width: 1030px;
 }
-body.category {
+body.category, body.single-episode, body.single-podcast, body.page-template-default {
   background-color: #fff;
 }
 
@@ -252,7 +252,7 @@ header nav a:active {
 }
 
 .btp-content-slider .carousel-indicators li.active {
-  color: #a566c6;
+  color: #9F00C5;
   font-size: 18px;
 }
 
@@ -694,7 +694,7 @@ figure img {
 /*-------------------tag.php -------------------*/
 
 .tag .overlay-div {
-  margin-top: 5px;
+  margin-top: 150px;
   max-width: 1108px;
   padding: 50px;
 }
