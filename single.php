@@ -20,7 +20,14 @@
             <div class="post-excerpt"><?php the_excerpt(); ?></div>
 
             <div class="post-author-link">
-                <span style="font-size:1.125em">By</span> <a class="post-author" href="<?php _e(get_author_posts_url($post->post_author)); ?>"> <?php the_author();?></a>
+                <span style="font-size:1.125em">By</span>
+                <span class="post-author"> <?php
+                    if ( function_exists( 'coauthors_posts_links' ) ) {
+                        coauthors_posts_links();
+                    } else {
+                        the_author_posts_link();
+                    } ?>
+                </span>
                 <?php $summary = get_post_meta( get_the_ID(), 'btp_post_summary', true );
                     if($summary && strlen($summary) > 1 ) :
                 ?>

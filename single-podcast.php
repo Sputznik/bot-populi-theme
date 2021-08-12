@@ -14,7 +14,7 @@
             <div class="page-title-separator"></div>
             <div class="page-description"><?php the_content(); ?></div>
             <div class="orbit-posts-wrapper"> <?php 
-                $output = do_shortcode('[orbit_query post_type="episode" post_parent__in="'. $post->ID .'" pagination="1" style="episode" posts_per_page="6" order="ASC" back_btn="1" back_btn_title="Back to Podacasts" back_btn_slug="/podcast"]');
+                $output = do_shortcode('[orbit_query post_type="episode" post_parent__in="'. $post->ID .'" pagination="1" style="episode" posts_per_page="10" order="ASC" button="1" button_title="Back to Podacasts" button_slug="/podcasts"]');
 
                 echo $output; ?>
             </div>

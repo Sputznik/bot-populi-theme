@@ -8,6 +8,12 @@
 
 <div class="content-wrap">
 	<a class="title" data-id="<?php _e( $post_id );?>" href="<?php _e($permalink);?>"><?php the_title();?></a>
-	<p class="authors"><?php _e(get_the_author());?></p>
+	<p class="authors"> <?php
+        if ( function_exists( 'coauthors_posts_links' ) ) {
+            coauthors();
+        } else {
+            _e(get_the_author());
+        } ?>    
+    </p>
 	<span class="meta"><?php _e(get_the_date( 'F j' ));?> | <?php echo do_shortcode('[rt_reading_time postfix="min read"]'); ?></span>
 </div>

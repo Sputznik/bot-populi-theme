@@ -475,7 +475,7 @@ main .overlay-div {
   margin-bottom: 20px;
 }
 
-.single .post-author-link a.post-author {
+.single .post-author-link .post-author a{
   color: #9F00C5;
   text-decoration: underline;
   font-size: 1.25em;
