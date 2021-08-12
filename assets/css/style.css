@@ -137,9 +137,9 @@ ul.dropdown-menu  li {
   color: #3d3d3d;
   text-decoration: none;
 }
-.btp-navbar-collapse ul li {
+/* .btp-navbar-collapse ul li {
 
-}
+} */
 header i {
   color: #9F00C5;
 }
@@ -720,13 +720,17 @@ figure img {
 .tag .orbit-post-grid article.post-list {
   display: grid;
   grid-template-columns: 196px 1fr;
-  grid-template-rows: 147px;
-  max-height: 147px;
+  /* grid-template-rows: 147px;
+  max-height: 147px; */
   grid-gap: 38px;
+  padding-bottom: 30px;
   background-color: unset;
+  border-bottom: 2px solid #d7d7d7;
 }
 
 .tag .orbit-post-grid article.post-list .feat-img {
+  width: auto;
+  height: 147px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1190,9 +1194,9 @@ footer h3.widget-title {
     justify-content: center;
   }
 
-  .navbar-expand-md .navbar-collapse {
-    /*max-width: 1000px;*/
-  }
+  /* .navbar-expand-md .navbar-collapse {
+    max-width: 1000px;
+  } */
 
   .dropdown-toggle::after {
     border:unset;
