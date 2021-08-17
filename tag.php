@@ -9,9 +9,9 @@
             <h1 class="page-title">Articles Tagged Under</h1>
             <div class="tag-name"># <?php _e( $tag->name ); ?></div>
             <div class="page-title-separator"></div>
-            <p class="page-description"><?php _e( $tag->category_description ); ?></p>
-            <div class="orbit-posts-wrapper"> <?php 
-                $output = do_shortcode('[orbit_query post_type="post,podcast,episode,video" tag="'. $tag->term_slug .'" pagination="1" style="list" posts_per_page="6" ]');
+            <p class="page-description"><?php //_e( $tag->description ); ?></p>
+            <div class="orbit-posts-wrapper"> <?php
+                $output = do_shortcode('[orbit_query post_type="post" tag="'. $tag->slug .'" pagination="1" style="list" posts_per_page="6" ]');
 
                 echo $output; ?>
             </div>
