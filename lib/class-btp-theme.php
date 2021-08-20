@@ -25,7 +25,7 @@ class BTP_THEME extends BTP_SINGLETON {
                 'title'	=> 'Article Additional Information',
                 'fields'	=> [
                     'btp_post_summary' => [
-                    'type'      => 'textarea',
+                    'type'      => 'rich_text',
                     'text'      => 'Summary'
                     ],
                 ]

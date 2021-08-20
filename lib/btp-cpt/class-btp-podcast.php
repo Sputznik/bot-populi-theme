@@ -39,6 +39,23 @@ class BTP_PODCAST extends BTP_SINGLETON {
             return $post_types;
         } );
 
+        // Podcast metafield usign orbit-bundle plugin
+		add_filter( 'orbit_meta_box_vars', function( $meta_box ){
+			$meta_box['podcast'] = [
+              [
+                'id'		=> 'btp-podcast-metafields',
+                'title'	    => 'Additional Information',
+                'fields'	=> [
+                    'btp_podcast_host' => [
+                    'type'      => 'text',
+                    'text'      => 'Hosted By'
+                    ],
+                ]
+              ]
+            ];
+			return $meta_box;
+		});
+
     }
 
 
