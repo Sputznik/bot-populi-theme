@@ -938,6 +938,55 @@ ul.category-pills  {
 /* end of single-video.php */
 
 
+/* --------------- author.php ------------ */
+
+.author .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author .btp-btn {
+  background-color: transparent;
+
+}
+
+.author .user-avatar img {
+  max-width: 230px;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.author .description-pane {
+  padding-left: 50px;
+}
+
+.author .orbit-post-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.author .description-pane .bio p{
+  color: #3D3D3D;
+  font-family: Merriweather;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 26px;
+}
+
+.author .description-pane .sub-title {
+  font-size: 1.2em;
+  color: #3D3D3D;
+  font-family: Poppins;
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+
+/* ----end of author.php------------- */
+
+
+
 /*------------------- footer ------------------- */
 footer {
   background-color: #3D3D3D;
@@ -1085,7 +1134,7 @@ footer h3.widget-title {
     margin-top: 24px;
   }
 
-  .orbit-post-grid {
+  .orbit-post-grid, .author .orbit-post-grid {
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
@@ -1176,6 +1225,26 @@ footer h3.widget-title {
     max-width: unset;
     height: 180px;
   }
+
+
+  .author .user-avatar img {
+    max-width: unset;
+    height: 180px;  
+  }
+
+  .author .description-pane {
+    padding-left: 15px;
+    padding-top: 20px;
+  }
+
+  .author .description-pane .sub-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #9F00C5;
+    line-height: 31px;
+    margin-bottom: 20px;
+  }
+
 
   footer {
     padding: unset;
