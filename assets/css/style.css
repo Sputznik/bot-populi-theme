@@ -18,6 +18,10 @@ a {
   color: #3D3D3D;
 }
 
+p a:hover {
+  color: #ff7a30;
+}
+
 h1 { font-size: 3em; line-height: 60px; font-weight: 600;}
 h2 { font-size: 2em; line-height: 48px; }
 h3 { font-size: 1.8em; line-height: 42px; }
@@ -404,6 +408,21 @@ main .overlay-div {
   text-decoration: none;
 }
 
+.btp-btn:hover {
+  background-color: #9F00C5;
+  color: #FFF;
+}
+
+.btp-btn:hover a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.orbit-btn-load-parent .load-more:hover {
+  background-color: #9F00C5;
+  color: #FFF;
+}
+
 .orbit-btn-load-parent .load-more i, .btp-btn i {
   margin-left: 17px;
 }
@@ -413,6 +432,9 @@ main .overlay-div {
 
 
 /* -------------------- Single.php ---------------------- */
+body.single {
+  background-color: #FFF;
+}
 
 .single main .overlay-div {
   position: relative;
@@ -1127,6 +1149,39 @@ footer h3.widget-title {
     height: 426px;
   }
 
+
+  .sow-tabs .sow-tabs-tab-container {
+    padding: unset!important;
+    justify-content: flex-start!important;
+    flex-wrap: nowrap!important;
+    overflow-x: auto;
+  }
+
+  .sow-tabs .sow-tabs-tab-container .sow-tabs-tab {
+    padding: 10px!important;
+    margin: unset!important;
+  }
+
+  .sow-tabs .sow-tabs-panel-container .sow-tabs-panel {
+    padding: 10px!important;
+  }
+
+  .sow-tabs-title {
+    font-size: 1.3em;
+  } 
+  
+  .sow-tabs-tab-selected .sow-tabs-title {
+    border-bottom: 5px solid #9F00C5;
+    font-size: 1.3em;
+    padding-bottom: 2px;
+  }
+
+  .orbit-post-grid article.post-card.read-more {
+    grid-template-rows: 118px;
+    min-height: unset;
+  }
+
+
   .featured {
     height: 140px;
   }
@@ -1202,6 +1257,7 @@ footer h3.widget-title {
 
   .tag .overlay-div {
     padding: 20px 15px;
+    margin-top: 130px;
   }
 
 
@@ -1313,5 +1369,13 @@ footer h3.widget-title {
   .single main .overlay-div {
     padding-left: 60px;
     padding-right: 60px;
+  }
+}
+
+@media (min-width: 1150px) {
+  #btp-homepage-slider .carousel-caption .title {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

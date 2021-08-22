@@ -29,6 +29,6 @@
         'walker'            => new WP_Bootstrap_Navwalker(),
         ] );
     ?>
-    <a class="nav-search-item" href="#"><i class="fas fa-search"></i></a>
+    <a class="nav-search-item" href="#"><i class="fa fa-search"></i></a>
   </div>
 </nav>
