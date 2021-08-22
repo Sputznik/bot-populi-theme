@@ -8,7 +8,7 @@
 </div>
 <div class="container overlay-div">
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-md-12">
         <?php if(have_posts()): while ( have_posts() ) : the_post(); ?>
             <h1 class="page-title"><?php the_title(); ?></h1>
             <div class="page-title-separator"></div>
@@ -20,6 +20,15 @@
             </div>
         <?php endwhile; endif;?>                
 		</div>
+
+        <div class="col-md-12 similar-content">
+            <h2 class="title">See Other Podcasts</h2>
+            <?php 
+                $output = do_shortcode('[orbit_query post_type="podcast" post__not_in="'. $post->ID .'" style="episode" posts_per_page="3" ]');
+
+                echo $output; 
+            ?>
+        </div>
 	</div>
 </div>
 

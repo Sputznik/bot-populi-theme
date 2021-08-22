@@ -73,4 +73,22 @@
     </div>
 </div>
 
+<div class="container similar-content">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="title text-center">Articles you might be interested in</h2>
+            <?php 
+                $categories = wp_get_post_categories($post->ID, ['ids']);
+                $cats_str = implode(',', $categories);
+                
+                $output = do_shortcode('[orbit_query post_type="post" cat="'. $cats_str .'"  style="card" posts_per_page="3" post__not_in="'. $post->ID .'"]');
+
+                echo $output;
+            ?>
+        </div>
+    </div>
+    
+
+</div>
+
 <?php get_footer(); ?>

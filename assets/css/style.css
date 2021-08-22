@@ -588,6 +588,21 @@ figure img {
   border-width: 1.5px;
 }
 
+.single .similar-content {
+  margin-bottom: 100px;
+}
+
+.similar-content .title {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 32px;
+  color: #9F00C5;
+  margin-bottom: 30px;
+}
+
+
+
 /* End of Single.php */
 
 
@@ -792,7 +807,7 @@ ul.category-pills  {
 
 .single.single-podcast .overlay-div {
   max-width: 1108px;
-  padding: 42px 54px 100px 54px;
+  padding: 42px 54px 0px 54px;
 }
 
 .single.single-podcast .page-title-separator {
@@ -812,6 +827,15 @@ ul.category-pills  {
 .single.single-podcast article.post-card .host {
   color: #bdbdbd;
 }
+
+.single.single-podcast .similar-content {
+  margin-top: 100px;;
+}
+
+.single.single-podcast .similar-content .title {
+  margin-bottom: 20px;
+}
+
 /* End of single-podcast.php */
 
 
