@@ -342,13 +342,34 @@ main .overlay-div {
   background-color: white;
 }
 
+.orbit-post-grid article.post-card .image-wrapper {
+  display: contents;
+  position: relative;
+}
+
 .orbit-post-grid article.post-card a {
   text-decoration: none;
 }
 
-
+article.post-card .cat-overlay {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  display: block;
+  max-width: 80%;
+  border-radius: 3px;
+  padding: 3px 5px;
+  background: #3D3D3D;
+  color: #fafafa;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: .75em;
+  line-height: 14px;
+  text-transform: uppercase;
+}
 
 .orbit-post-grid article.post-card .feat-img {
+  position: relative;
   grid-area: image;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1222,6 +1243,13 @@ footer h3.widget-title {
     grid-template-columns: 100px 1fr;
     grid-template-rows: 118px;
     min-height: unset;
+  }
+
+  article.post-card .cat-overlay {
+    left: 5%;
+    max-width: 75%;
+    font-size: .65em;
+    line-height: 14px;
   }
 
   .orbit-post-grid article.post-card .content-wrap {
