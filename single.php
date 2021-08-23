@@ -20,27 +20,49 @@
             <div class="post-excerpt"><?php the_excerpt(); ?></div>
 
             <div class="post-author-link">
-                <span style="font-size:1.125em">By</span>
-                <span class="post-author"> <?php
-                    if ( function_exists( 'coauthors_posts_links' ) ) {
-                        coauthors_posts_links();
-                    } else {
-                        the_author_posts_link();
-                    } ?>
-                </span>
+                <div>    
+                    <span style="font-size:1.125em">By</span>
+                    <span class="post-author"> <?php
+                        if ( function_exists( 'coauthors_posts_links' ) ) {
+                            coauthors_posts_links();
+                        } else {
+                            the_author_posts_link();
+                        } ?>
+                    </span>
+                </div>
                 <?php $summary = get_post_meta( get_the_ID(), 'btp_post_summary', true );
                     if($summary && strlen($summary) > 1 ) :
                 ?>
-                <a data-toggle="collapse" class="float-right" href="#collapseSummary">
+                <div class="summary-wrapper">
+                    <a data-toggle="collapse" class="" href="#collapseSummary">
                     Summary &nbsp;&nbsp;<i class="fas fa-angle-down"></i>
-                </a>
-                <div class="collapse" id="collapseSummary">
-                    <?php _e($summary); ?>
+                    </a>
+
+                    <ul class="d-block d-md-none btp-social-icons list-unstyled list-inline">
+                        <li class="list-inline-item social-icon"><i class="fas fa-link"></i></li>
+                        <li class="list-inline-item social-icon"><i class="fab fa-facebook-f"></i></li>
+                        <li class="list-inline-item social-icon"><i class="far fa-envelope"></i></li>
+                        <li class="list-inline-item social-icon"><i class="fab fa-twitter"></i></li>
+                    </ul>
                 </div>
+                
                 <?php endif; ?>
+            </div>
+            <div class="collapse" id="collapseSummary">
+                    <?php _e($summary); ?>
+            </div>
+
+            <div class="social-share-aside clearfix">
+                <ul class="btp-social-icons list-unstyled">
+                    <li class="social-icon"><i class="fas fa-link"></i></li>
+                    <li class="social-icon"><i class="fab fa-facebook-f"></i></li>
+                    <li class="social-icon"><i class="far fa-envelope"></i></li>
+                    <li class="social-icon"><i class="fab fa-twitter"></i></li>
+                </ul>
             </div>
 
             <div class="page-title-separator"></div>
+            
             <div class="progress-container">
                 <div class="progress-indicator"></div>
             </div>

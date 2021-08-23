@@ -462,6 +462,34 @@ body.single {
   max-width: 830px;
   padding: 71px 85px 100px 85px;
 }
+ 
+.btp-social-icons li {
+  padding: 7px;
+  margin: unset!important;
+  background-color: #3D3D3D;
+  color: #FAFAFA;
+}
+
+.btp-social-icons li i {
+  font-size: 16px;
+}
+
+.btp-social-icons {
+  margin: unset!important;
+}
+
+.social-share-aside .btp-social-icons {
+  position: absolute;
+  top: 315px;
+  transform: translateX(-115px);
+  margin: unset;
+  padding: unset;
+}
+
+.social-share-aside .btp-social-icons li {
+  padding: 2px 7px;
+  margin-top: 2px!important;
+}
 
 .progress-container {
   float: left;
@@ -471,7 +499,7 @@ body.single {
   width: 10px;
   height: 235px;
   background: #BDBDBD;
-  }
+}
 
 .progress-indicator {
   width: 10px;
@@ -503,6 +531,8 @@ body.single {
 }
 
 .single .post-author-link {
+  display: flex;
+  justify-content: space-between;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 1em;
@@ -531,12 +561,15 @@ body.single {
   font-weight: 300;
   font-size: 1em;
   line-height: 26px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .single .page-title-separator {
   margin: 10px -85px 0px -85px;
   border: 1px solid #E0E0E0;
 }
+
 
 .single .post-content {
   margin-top: 30px;
@@ -1213,6 +1246,21 @@ footer h3.widget-title {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 27.4px 17px 100px 17px;
+  }
+
+  .single .post-author-link {
+    flex-direction: column;
+  }
+
+  .single .summary-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 25px;
+  }
+
+  .progress-container, .social-share-wrapper {
+    display: none;
   }
 
   .page-title {
