@@ -30,13 +30,15 @@
                         } ?>
                     </span>
                 </div>
-                <?php $summary = get_post_meta( get_the_ID(), 'btp_post_summary', true );
-                    if($summary && strlen($summary) > 1 ) :
+                <?php 
+                    $summary = get_post_meta( get_the_ID(), 'btp_post_summary', true );
                 ?>
                 <div class="summary-wrapper">
-                    <a data-toggle="collapse" class="" href="#collapseSummary">
-                    Summary &nbsp;&nbsp;<i class="fas fa-angle-down"></i>
-                    </a>
+                    <?php if($summary && strlen($summary) > 1 ) : ?>
+                        <a data-toggle="collapse" class="" href="#collapseSummary">
+                        Summary &nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                        </a>
+                    <?php endif; ?>
 
                     <ul class="d-block d-md-none btp-social-icons list-unstyled list-inline">
                         <li class="list-inline-item social-icon"><i class="fas fa-link"></i></li>
@@ -46,7 +48,6 @@
                     </ul>
                 </div>
                 
-                <?php endif; ?>
             </div>
             <div class="collapse" id="collapseSummary">
                     <?php _e($summary); ?>

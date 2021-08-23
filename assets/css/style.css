@@ -478,9 +478,13 @@ body.single {
   margin: unset!important;
 }
 
+.social-share-aside {
+  position: relative;
+}
+
 .social-share-aside .btp-social-icons {
   position: absolute;
-  top: 315px;
+  bottom: -10px;
   transform: translateX(-115px);
   margin: unset;
   padding: unset;
@@ -1445,6 +1449,18 @@ footer h3.widget-title {
   .single main .overlay-div {
     padding-left: 60px;
     padding-right: 60px;
+  }
+
+  .single .page-title-separator {
+    margin: 10px -59px 0px -59px;
+  }
+
+  .social-share-aside .btp-social-icons {
+    transform: translateX(-90px);
+  }
+
+  .progress-container {
+    transform: translateX(-70px);
   }
 }
 
