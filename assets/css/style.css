@@ -141,9 +141,9 @@ ul.dropdown-menu  li {
   color: #3d3d3d;
   text-decoration: none;
 }
-/* .btp-navbar-collapse ul li {
 
-} */
+
+
 header i {
   color: #9F00C5;
 }
@@ -311,7 +311,7 @@ main .overlay-div {
   margin: unset;
 }
 
-.page-title-separator {
+.btp-separator, .page-title-separator {
   border: 1px solid #d7d7d7;
   margin: 30px 0;
 }
@@ -1090,6 +1090,119 @@ ul.category-pills  {
 /* ----end of author.php------------- */
 
 
+/* -------------Search----------- */
+body.search {
+  background-color: #FFF;
+}
+
+.search .title {
+  color: #3D3D3D;
+  font-family: 'Poppins';
+  font-size: 3em;
+  line-height: 60px;
+}
+
+#searchModal .modal-open .modal {
+  padding-right: unset!important;
+}
+
+#searchModal .modal-dialog {
+  margin: unset;
+}
+
+#searchModal .modal-content {
+  padding: 5% 10%;
+  background-color: #828282;
+  color: #FAFAFA;
+  border: unset;
+  border-radius: unset;
+}
+
+#searchModal .modal-header {
+  padding: unset;
+  border-bottom: unset;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+}
+
+#searchModal .modal-header .close{
+  color: #FFF;
+  opacity: 1;
+  font-weight: 100;
+  font-size: 2em;
+}
+
+#searchModal .modal-body {
+  padding: unset;
+}
+
+#searchModal .modal-body .title {
+  font-family: Poppins;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 60px;
+  margin-bottom: 30px;
+  color: #FAFAFA;
+  text-transform: none;
+}
+
+ #searchModal .form-control {
+  background-color: #828282;
+  border: 1px solid #FFF;
+  color: #fff;
+  height: 50px;
+}
+
+.search .form-control {
+  background-color: inherit;
+  border: 1px solid #9F00C5;
+  color: #3D3D3D;
+  font-weight: 600;
+  height: 50px;
+}
+
+#searchModal .form-control:focus {
+  box-shadow: unset;
+}
+
+.search .form-control:focus {
+  box-shadow: unset;
+  border-color: #9F00C5;
+}
+
+
+#searchModal .form-control::-webkit-input-placeholder {
+  color: #FAFAFA;
+}
+
+
+#searchModal .btn-outline-secondary {
+  color: #FFF;
+  border-color: #FFF;
+  height: 50px;
+}
+
+#searchModal .btn-outline-secondary i {
+  color: #FFF;
+}
+
+.search .btn-outline-secondary {
+  color: #9F00C5;
+  border-color: #9F00C5;
+  height: 50px;
+}
+
+
+@media (min-width: 576px) {
+  #searchModal .modal-dialog {
+    max-width: unset;
+    margin: unset;
+  }  
+}
+
+
+/* -------------end of search template---- */
+
 
 /*------------------- footer ------------------- */
 footer {
@@ -1196,6 +1309,16 @@ footer h3.widget-title {
     color: #9F00C5;
   }
 
+
+  #searchModal .modal-content {
+    padding: 5% 5%;
+  }
+
+  #searchModal .modal-body .title {
+    font-size: 2.2em;
+    line-height: 40px;
+    margin-bottom: 26px;
+  }
 
   #btp-homepage-slider .carousel-caption .title {
     font-size: 1.25em;

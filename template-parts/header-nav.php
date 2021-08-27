@@ -29,6 +29,34 @@
         'walker'            => new WP_Bootstrap_Navwalker(),
         ] );
     ?>
-    <a class="nav-search-item" href="#"><i class="fa fa-search"></i></a>
+    <a class="nav-search-item" href="#" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search"></i></a>
   </div>
 </nav>
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content vh-100">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h1 class="title mt-5">Search</h1>
+        
+        <form method="GET" action="<?php bloginfo('url');?>">
+          <div class="row no-gutters">
+            <div class="col">
+              <input class="form-control border-right-0 rounded-0" name="s" placeholder="Enter search query">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>            
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
