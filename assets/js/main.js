@@ -62,7 +62,9 @@ jQuery(document).ready(function($){
         }
     };
 
-        
+    $('.search .custom-select').change(function(){
+        this.form.submit();
+    });    
     
 
 });

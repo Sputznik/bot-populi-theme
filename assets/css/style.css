@@ -1136,6 +1136,10 @@ body.search {
   padding: unset;
 }
 
+#searchModal .modal-body .row {
+  flex: 1;
+}
+
 #searchModal .modal-body .title {
   font-family: Poppins;
   font-size: 3em;
@@ -1153,23 +1157,9 @@ body.search {
   height: 50px;
 }
 
-.search .form-control {
-  background-color: inherit;
-  border: 1px solid #9F00C5;
-  color: #3D3D3D;
-  font-weight: 600;
-  height: 50px;
-}
-
 #searchModal .form-control:focus {
   box-shadow: unset;
 }
-
-.search .form-control:focus {
-  box-shadow: unset;
-  border-color: #9F00C5;
-}
-
 
 #searchModal .form-control::-webkit-input-placeholder {
   color: #FAFAFA;
@@ -1186,10 +1176,77 @@ body.search {
   color: #FFF;
 }
 
-.search .btn-outline-secondary {
+.search .search-title {
+  margin-top: 200px;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+}
+
+.search form .sort-wrapper
+{
+  margin-left: 23px;
+}
+
+.search form .sort-wrapper .input-group {
+  height: 50px;
+  border-radius: unset;
+}
+
+.search .custom-select:focus {
+  box-shadow: unset;
+}
+
+
+.search .form-control {
+  background-color: inherit;
+  border: 1px solid #9F00C5;
+  color: #3D3D3D;
+  font-weight: 600;
+  height: 50px;
+}
+
+.search .form-control:focus {
+  box-shadow: unset;
+  border-color: #9F00C5;
+}
+
+.search form .btn-sort {
+  border-right: unset;
+  height: inherit;
+  border-radius: unset;
+  padding-right: unset;
+  text-transform: initial;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle,.btn-outline-secondary:not(:disabled):not(.disabled):active:focus {
+  color: #9F00C5;
+  background-color: unset;
+  border-color: #9F00C5;
+  box-shadow: unset;
+}
+
+.search .custom-select {
+  border-left: unset;
+  height: 50px;
+  padding-right: 2rem;
+  border-color: #9F00C5;
+  border-radius: unset;
+  background-color: inherit;
+  color: #9F00C5;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+.search .btn-outline-secondary, .search .btn-outline-secondary:hover, .search .btn-outline-secondary:active {
   color: #9F00C5;
   border-color: #9F00C5;
   height: 50px;
+  background-color: unset;
+  box-shadow: unset;
 }
 
 
@@ -1526,6 +1583,24 @@ footer h3.widget-title {
     color: #9F00C5;
     line-height: 31px;
     margin-bottom: 20px;
+  }
+
+  .search .search-title {
+    font-size: 2.2em;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .search form {
+    flex-direction: column;
+    align-items: unset;
+  }
+  
+  .search form .sort-wrapper {
+    max-width: 305px;
+    margin-left: unset;
+    margin-top: 20px;
   }
 
 
