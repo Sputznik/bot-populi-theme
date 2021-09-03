@@ -75,7 +75,7 @@ function btp_get_episodes_list( $podcast_id ) {
     if( ! $podcast_id ) {
         return false;
     }
-    
+
     $episodes = get_children( [
         'post_parent' => $podcast_id,
         'order' => 'ASC',
@@ -89,8 +89,8 @@ function btp_get_episodes_list( $podcast_id ) {
 }
 
 /** Reuturns list of videos exluding the currently passed id */
-function btp_get_videos( $id ) {   
-    
+function btp_get_videos( $id ) {
+
     $args = [
         'post_type' => 'video',
         'post_status' => 'publish',
@@ -105,5 +105,10 @@ function btp_get_videos( $id ) {
     }
 
     return [];
-    
+
+}
+
+/** RETURNS UNIQUE ID **/
+function getUniqueID( $data ){
+  return substr( md5( json_encode( $data ) ), 0, 8 );
 }
