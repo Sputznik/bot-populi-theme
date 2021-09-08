@@ -6,7 +6,8 @@
   user-select: none;
 }
 
-.btp-img-grid .btp-card-body:hover{ cursor: pointer; }
+.btp-img-grid .btp-card-body:hover,
+.btp-modal-btn{ cursor: pointer; }
 .btp-img-modal .thumbnail-bg{ min-height: 180px; }
 
 .btp-img-modal .thumbnail-bg,
@@ -58,7 +59,8 @@
   line-height: 24px;
 }
 
-.btp-img-modal .btn-web{
+.btp-img-modal .btn-web,
+.btp-modal-btn{
   display: inline-flex;
   align-items: center;
   color: #9f00c5;
@@ -73,7 +75,8 @@
   border: 1px solid #9f00c5;
   box-sizing: border-box;
 }
-.btp-img-modal .btn-web i{ margin-left: 10px; }
+.btp-img-modal .btn-web i,
+.btp-modal-btn i{ margin-left: 10px; }
 /* BTP POPUP */
 
 @media(min-width: 768px){
