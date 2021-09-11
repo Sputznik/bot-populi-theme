@@ -41,10 +41,10 @@
                     <?php endif; ?>
 
                     <ul class="d-block d-md-none btp-social-icons list-unstyled list-inline">
-                        <li class="list-inline-item social-icon"><i class="fas fa-link"></i></li>
-                        <li class="list-inline-item social-icon"><i class="fab fa-facebook-f"></i></li>
-                        <li class="list-inline-item social-icon"><i class="far fa-envelope"></i></li>
-                        <li class="list-inline-item social-icon"><i class="fab fa-twitter"></i></li>
+                        <li class="list-inline-item social-icon"><a href="#"><i class="fas fa-link"></i></a></li>
+                        <li class="list-inline-item social-icon"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item social-icon"><a href="#"><i class="far fa-envelope"></i></a></li>
+                        <li class="list-inline-item social-icon"><a href="#"><i class="fab fa-twitter"></i></a></li>
                     </ul>
                 </div>
                 
@@ -55,10 +55,10 @@
 
             <div class="social-share-aside clearfix">
                 <ul class="btp-social-icons list-unstyled">
-                    <li class="social-icon"><i class="fas fa-link"></i></li>
-                    <li class="social-icon"><i class="fab fa-facebook-f"></i></li>
-                    <li class="social-icon"><i class="far fa-envelope"></i></li>
-                    <li class="social-icon"><i class="fab fa-twitter"></i></li>
+                    <li class="social-icon"><a href="#"><i class="fas fa-link"></i></a></li>
+                    <li class="social-icon"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="social-icon"><a href="#"><i class="far fa-envelope"></i></a></li>
+                    <li class="social-icon"><a href="#"><i class="fab fa-twitter"></i></a></li>
                 </ul>
             </div>
 

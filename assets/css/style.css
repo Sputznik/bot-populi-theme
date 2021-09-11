@@ -470,6 +470,11 @@ body.single {
   color: #FAFAFA;
 }
 
+.btp-social-icons a {
+  display: inline!important;
+  color: #fafafa!important;
+}
+
 .btp-social-icons li i {
   font-size: 16px;
 }
@@ -1322,7 +1327,7 @@ footer h3.widget-title {
   text-align: center;
   margin-top: 20px;
   font-family: Poppins;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.25em;
   line-height: 25px;
   margin-bottom: 15px;
@@ -1654,6 +1659,13 @@ footer h3.widget-title {
   .btp-orbit.users-grid {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+  }
+
+  .orbit-user-name {
+    margin-top: 10px;
+    font-size: 1em;
+    line-height: 19px;
+    margin-bottom: 20px;
   }
 
 }
