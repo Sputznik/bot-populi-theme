@@ -1,6 +1,6 @@
 <?php
-    $logo = BTP_DIR_URI . '/assets/images/BP_without_tagline.png';
-    $logo_large = BTP_DIR_URI . '/assets/images/BP_with_tagline.png';
+    $logo = BTP_DIR_URI . '/assets/images/bp_without_tagline.png';
+    $logo_large = BTP_DIR_URI . '/assets/images/bp_with_tagline.png';
 
 ?>
 <nav class="navbar navbar-expand-md fixed-top" role="navigation">
@@ -42,7 +42,7 @@
       </div>
       <div class="modal-body">
         <h1 class="title mt-5">Search</h1>
-        
+
         <form method="GET" action="<?php bloginfo('url');?>">
           <div class="row no-gutters">
             <div class="col">
@@ -52,10 +52,10 @@
                 <button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
                     <i class="fa fa-search"></i>
                 </button>
-            </div>            
+            </div>
           </div>
         </form>
-        
+
       </div>
     </div>
   </div>
