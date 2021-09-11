@@ -899,7 +899,7 @@ ul.category-pills  {
   margin: 30px 0;
 }
 
-.single.single-podcast article.post-card .meta, .single.single-podcast article.post-card .host {
+.single.single-podcast article.post-card .meta, .single.single-podcast article.post-card .host,  article.podcast .meta, article.podcast .host {
   display: block;
   font-size: 0.875em;
   font-weight: 500;

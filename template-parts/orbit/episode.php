@@ -13,6 +13,5 @@
 	<div>
         <span class="meta">Episode <?php _e( $episode_num );?> - <?php _e($episode_duration);?> mins</span>
         <span class="host">Hosted by <?php _e(get_the_author());?></span>
-
     </div>
 </div>
