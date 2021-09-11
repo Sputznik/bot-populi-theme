@@ -1295,6 +1295,44 @@ footer h3.widget-title {
 
 /* end of footer */
 
+/* orbit_user_query style="grid" */
+.btp-orbit.users-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.btp-orbit.users-grid a{
+  text-decoration: none;
+}
+
+.btp-orbit.users-grid .avatar {
+  width: 100%;
+  max-width: 320px;
+  max-height: 320px;
+  height: auto;
+}
+
+.btp-orbit.users-grid .orbit-user-name:hover{
+  text-decoration: none;
+  color: #9F00C5;
+}
+
+.orbit-user-name {
+  text-align: center;
+  margin-top: 20px;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 1.25em;
+  line-height: 25px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: #3D3D3D;
+}
+
+
+/* end of orbit_user_query */
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 
 
@@ -1612,6 +1650,12 @@ footer h3.widget-title {
     max-width: 100%;
     padding: 0px 17px;
   }
+
+  .btp-orbit.users-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
 }
 
 
