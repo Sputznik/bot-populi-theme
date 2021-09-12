@@ -18,7 +18,7 @@
             <h1 class="post-title"><?php the_title();?></h1>
 
             <div class="post-excerpt"><?php the_excerpt(); ?></div>
-
+            <div class="flash-message"></div>    
             <div class="post-author-link">
                 <div>    
                     <span style="font-size:1.125em">By</span>
@@ -40,12 +40,9 @@
                         </a>
                     <?php endif; ?>
 
-                    <ul class="d-block d-md-none btp-social-icons list-unstyled list-inline">
-                        <li class="list-inline-item social-icon"><a href="#"><i class="fas fa-link"></i></a></li>
-                        <li class="list-inline-item social-icon"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item social-icon"><a href="#"><i class="far fa-envelope"></i></a></li>
-                        <li class="list-inline-item social-icon"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
+                    <div class="d-block d-md-none">
+                        <?php btp_get_social_share_links(false);?>
+                    </div>
                 </div>
                 
             </div>
@@ -54,12 +51,7 @@
             </div>
 
             <div class="social-share-aside clearfix">
-                <ul class="btp-social-icons list-unstyled">
-                    <li class="social-icon"><a href="#"><i class="fas fa-link"></i></a></li>
-                    <li class="social-icon"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="social-icon"><a href="#"><i class="far fa-envelope"></i></a></li>
-                    <li class="social-icon"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                </ul>
+                <?php btp_get_social_share_links();?>
             </div>
 
             <div class="page-title-separator"></div>

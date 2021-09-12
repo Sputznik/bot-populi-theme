@@ -64,7 +64,20 @@ jQuery(document).ready(function($){
 
     $('.search .custom-select').change(function(){
         this.form.submit();
-    });    
+    });
     
+     
 
+    $(".btp-copy-link").on( 'click', function(ev) {
+        ev.preventDefault();
+        var data = $(ev.target).parent().attr('href');
+        console.log(data);
+        navigator.clipboard.writeText( data ).then( function() {
+            $(".flash-message").append('<div class="alert alert-warning alert-dismissible fade show" role="alert"> link copied to clipboard <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        }, function() {
+            console.log('clipboard write failed');
+        });
+    });
+
+   
 });

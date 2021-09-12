@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Main class
+ * Bootstraps theme specific functionalities
  */
 class BTP_THEME extends BTP_SINGLETON {
 
@@ -16,6 +16,8 @@ class BTP_THEME extends BTP_SINGLETON {
         // enqueue scripts for wp admin backend
         add_action( 'admin_enqueue_scripts', array( $this, 'adminScriptsCb' ) );
 
+        // update language_attributes for single page template
+        add_filter( 'language_attributes', [$this, 'ogPrefix'] );
 
         // Post Summary metafield usign orbit-bundle plugin
 		add_filter( 'orbit_meta_box_vars', function( $meta_box ){
@@ -39,7 +41,7 @@ class BTP_THEME extends BTP_SINGLETON {
           $folders[] = get_template_directory() . '/so-widgets/';
           return $folders;
         });
-
+        
     }
 
 
@@ -136,6 +138,17 @@ class BTP_THEME extends BTP_SINGLETON {
                 'after_title'   => '</h3>',
             )
         );
+    }
+
+    /**
+     * callback function for language_attributes filter
+     */
+    function ogPrefix( $attribute ) {
+        if( is_single() ) {
+            $attribute .= ' prefix="og: http://ogp.me/ns#"';
+        }
+
+        return $attribute;
     }
 
 
