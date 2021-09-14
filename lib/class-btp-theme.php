@@ -11,6 +11,7 @@ class BTP_THEME extends BTP_SINGLETON {
     public function __construct() {
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueueScriptsCb' ] );
         add_action( 'after_setup_theme', [ $this, 'afterSetupThemeCb' ] );
+        add_filter( 'document_title_separator', [ $this, 'documentTitleSeparator'] );
         add_action( 'widgets_init', [ $this, 'registerSidebars' ] );
 
         // enqueue scripts for wp admin backend
@@ -116,6 +117,7 @@ class BTP_THEME extends BTP_SINGLETON {
 
         // Register Theme Supports
         add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'title-tag' );
 
         // Opting out of the block-based widgets editor
         remove_theme_support( 'widgets-block-editor' );
@@ -123,6 +125,13 @@ class BTP_THEME extends BTP_SINGLETON {
         // Hide admin bar
         show_admin_bar(false);
 
+    }
+
+    public function documentTitleSeparator( $sep )
+    {
+        $sep = "&raquo;";
+
+        return $sep;
     }
 
 
