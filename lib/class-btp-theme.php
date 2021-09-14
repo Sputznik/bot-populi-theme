@@ -70,8 +70,8 @@ class BTP_THEME extends BTP_SINGLETON {
 
         wp_localize_script( 'btp-script', 'btp_settings', [
             'ajax' => admin_url( 'admin-ajax.php' ),
-            'logo' => [ 'medium' => BTP_DIR_URI . '/assets/images/BP_without_tagline.png',
-                        'large' => BTP_DIR_URI . '/assets/images/BP_with_tagline.png',
+            'logo' => [ 'medium' => BTP_DIR_URI . '/assets/images/bp_without_tagline.png',
+                        'large' => BTP_DIR_URI . '/assets/images/bp_with_tagline.png',
                       ]
             ]
         );
