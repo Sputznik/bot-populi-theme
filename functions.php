@@ -28,7 +28,7 @@ foreach ($inc_files as $file_to_include ) {
 }
 
 
-/**  
+/**
  * Add extra fields into orbit query attributes
  */
 add_filter('orbit_query_atts', function( $atts ){
@@ -78,8 +78,8 @@ function btp_get_episodes_list( $podcast_id ) {
 }
 
 
-/** 
- * Reuturns list of videos exluding the currently passed id 
+/**
+ * Reuturns list of videos exluding the currently passed id
  */
 function btp_get_videos( $id ) {
 
@@ -106,8 +106,8 @@ function getUniqueID( $data ){
 }
 
 
-/** 
- * Add og-meta tags on single post template 
+/**
+ * Add og-meta tags on single post template
  */
 function btp_single_template_og_tags() {
     global $post;
@@ -115,12 +115,12 @@ function btp_single_template_og_tags() {
     if( is_single() ) {
 
         $url     = get_post_permalink();
-        $title   = get_the_title();     
+        $title   = get_the_title();
         $image   = BTP_DIR_URI . '/assets/images/BP_with_tagline.png';
         $desc    = strip_shortcodes( strip_tags( $post->post_content) );
-        $desc    = str_replace(array("\n", "\r", "\t"), ' ', $desc);   
+        $desc    = str_replace(array("\n", "\r", "\t"), ' ', $desc);
         $desc    = substr( $desc, 0, 153) . '...';
-        
+
         if( has_post_thumbnail($post->ID) ) {
             $image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full', false)[0];
         }
@@ -140,7 +140,7 @@ function btp_single_template_og_tags() {
         <meta name="twitter:title" content="<?php _e($title); ?>">
         <meta name="twitter:description" content="<?php _e($desc); ?>">
         <meta name="twitter:image" content="<?php _e($image); ?>">
-        
+
         <?php
         ob_end_flush();
     } else {
@@ -150,10 +150,10 @@ function btp_single_template_og_tags() {
 add_action('wp_head', 'btp_single_template_og_tags', 4);
 
 
-/** 
- * Load facebook js sdk for sharing on single post template 
+/**
+ * Load facebook js sdk for sharing on single post template
  */
-add_action('wp_body_open', function(){ 
+add_action('wp_body_open', function(){
     if(is_single() ) {
      echo '
         <div id="fb-root"></div>
@@ -166,15 +166,15 @@ add_action('wp_body_open', function(){
 /**
  * Return list of social share icons
  */
-function btp_get_social_share_links( $aside = true ) { 
+function btp_get_social_share_links( $aside = true ) {
     global $post;
 
     $permalink  = get_the_permalink();
     $title      = get_the_title();
     $desc       = strip_shortcodes( strip_tags( $post->post_content) );
-    $desc       = str_replace(array("\n", "\r", "\t"), ' ', $desc);   
-    $desc       = substr( $desc, 0, 153) . '...'; 
-    
+    $desc       = str_replace(array("\n", "\r", "\t"), ' ', $desc);
+    $desc       = substr( $desc, 0, 153) . '...';
+
     ob_start(); ?>
     <ul class="btp-social-icons list-unstyled <?php !$aside ? _e('list-inline') : ''; ?>">
         <!-- link -->
@@ -195,4 +195,19 @@ function btp_get_social_share_links( $aside = true ) {
         </li>
     </ul>
     <?php ob_end_flush();
+}
+
+// RETURNS ORBIT SHORTCODE
+function btp_get_author_posts( $current_author, $per_page = 6 ) {
+  $shortcode_str = '[orbit_query post_type="post" pagination="1" style="card" posts_per_page="'.$per_page.'" ';
+
+  if( isset( $current_author->type ) && $current_author->type == 'wpuser' ){
+    $shortcode_str .= 'author="'. $current_author->ID .'"';
+  } else{
+      $shortcode_str .= 'tax_query="author:cap-'.$current_author->user_nicename.'"';
+  }
+
+  $shortcode_str .= ']';
+
+  return $shortcode_str;
 }

@@ -18,9 +18,9 @@
             <h1 class="post-title"><?php the_title();?></h1>
 
             <div class="post-excerpt"><?php the_excerpt(); ?></div>
-            <div class="flash-message"></div>    
+            <div class="flash-message"></div>
             <div class="post-author-link">
-                <div>    
+                <div>
                     <span style="font-size:1.125em">By</span>
                     <span class="post-author"> <?php
                         if ( function_exists( 'coauthors_posts_links' ) ) {
@@ -30,7 +30,7 @@
                         } ?>
                     </span>
                 </div>
-                <?php 
+                <?php
                     $summary = get_post_meta( get_the_ID(), 'btp_post_summary', true );
                 ?>
                 <div class="summary-wrapper">
@@ -44,7 +44,7 @@
                         <?php btp_get_social_share_links(false);?>
                     </div>
                 </div>
-                
+
             </div>
             <div class="collapse" id="collapseSummary">
                     <?php _e($summary); ?>
@@ -55,7 +55,7 @@
             </div>
 
             <div class="page-title-separator"></div>
-            
+
             <div class="progress-container">
                 <div class="progress-indicator"></div>
             </div>
@@ -81,7 +81,13 @@
 
             <div class="page-title-separator"></div>
 
-            <?php get_template_part('template-parts/post/author-box')?>
+
+            <?php
+            if ( function_exists('coauthors_posts_links') ) {
+              get_template_part('template-parts/post/coauthors-box');
+            }
+
+            // get_template_part('template-parts/post/author-box')?>
 
         <?php endwhile; endif; ?>
         </div>
@@ -92,17 +98,17 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="title text-center">Articles you might be interested in</h2>
-            <?php 
+            <?php
                 $categories = wp_get_post_categories($post->ID, ['ids']);
                 $cats_str = implode(',', $categories);
-                
+
                 $output = do_shortcode('[orbit_query post_type="post" cat="'. $cats_str .'"  style="card" posts_per_page="3" post__not_in="'. $post->ID .'"]');
 
                 echo $output;
             ?>
         </div>
     </div>
-    
+
 
 </div>
 
