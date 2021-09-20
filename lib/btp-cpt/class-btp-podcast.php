@@ -47,8 +47,12 @@ class BTP_PODCAST extends BTP_SINGLETON {
                 'title'	    => 'Additional Information',
                 'fields'	=> [
                     'btp_podcast_host' => [
-                    'type'      => 'text',
-                    'text'      => 'Hosted By'
+                        'type'      => 'text',
+                        'text'      => 'Hosted By'
+                    ],
+                    'btp_podcast_total_episodes' => [
+                        'type'      => 'text',
+                        'text'      => 'Number Of Episodes'
                     ],
                 ]
               ]
