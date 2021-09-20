@@ -1398,6 +1398,12 @@ footer h3.widget-title {
 
 /* end of similar categories */
 
+/* .boldgrid-section overrides */
+.boldgrid-section .wp-caption, .boldgrid-section img {
+  max-width: 660px;
+  width: 100%;
+  height: auto;
+}
 
 
 /* -------------------------- MEDIA QUERIES ------------------------- */

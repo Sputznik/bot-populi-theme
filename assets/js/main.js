@@ -13,9 +13,15 @@ jQuery(document).ready(function($){
             
             if ($(this).scrollTop() > 100 ) { 
                 $el.attr('src', btp_settings.logo.medium);
+                // $el.fadeOut(400, function(){
+                //     $el.attr('src', btp_settings.logo.medium).fadeIn(400);
+                // });
                     
             } else if ($(this).scrollTop() < 50 ) { 
                 $el.attr('src', btp_settings.logo.large);
+                // $el.fadeOut(400, function(){
+                //     $el.attr('src', btp_settings.logo.large);
+                // });
             }
         }
 
@@ -71,7 +77,6 @@ jQuery(document).ready(function($){
     $(".btp-copy-link").on( 'click', function(ev) {
         ev.preventDefault();
         var data = $(ev.target).parent().attr('href');
-        console.log(data);
         navigator.clipboard.writeText( data ).then( function() {
             $(".flash-message").append('<div class="alert alert-warning alert-dismissible fade show" role="alert"> link copied to clipboard <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         }, function() {
