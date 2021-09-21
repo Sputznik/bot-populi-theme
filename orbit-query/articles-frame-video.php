@@ -16,12 +16,12 @@
         
     <?php for( $k=0; $k< $post_count; ) : if( $this->query->have_posts() ) : ?>
         <div class="carousel-item <?php $temp ? _e('active'): '';?>" >
-            <div class="orbit-post-grid"> <?php
+            <div class="orbit-post-grid btp-videos"> <?php
                 for($i=0;  $i < $atts['posts_per_frame']; $i++) : 
                     if( $this->query->have_posts() ) { $this->query->the_post(); ?>
                          <?php $post_type = get_post_type();?>
                         <article class='post-card <?php _e($post_type);?>'>
-                            <?php get_template_part( 'template-parts/orbit/card' ); ?>
+                            <?php get_template_part( 'template-parts/orbit/video' ); ?>
                         </article> <?php
                         $k++ ;
                     } else {
