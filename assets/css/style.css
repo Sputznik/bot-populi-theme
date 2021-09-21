@@ -206,6 +206,10 @@ header nav a:active {
   padding: 12px 30px;
   text-transform: uppercase;
 }
+#btp-homepage-slider .carousel-caption a:hover {
+  background-color: #fafafa;
+  color: #111;
+}
 
 /* ---------- so tabs override ---------------------- */
 .sow-tabs-tab-container, .sow-tabs-tab-selected {
@@ -273,6 +277,12 @@ header nav a:active {
   font-size: 1.25em;
   font-weight: 600;
 }
+
+/* SO buttons customization */
+.so-widget-sow-button a:hover {
+  text-decoration: none;
+}
+
 
 /* FEATURED/BANNER IMAGE used on homepage slider, single templates, category templates */
 .featured {
