@@ -908,7 +908,7 @@ ul.category-pills  {
   margin: 30px 0;
 }
 
-.single.single-podcast article.post-card .meta, .single.single-podcast article.post-card .host,  article.podcast .meta, article.podcast .host, article.episode .meta, article.episode .host {
+.single.single-podcast article.post-card .meta, .single.single-podcast article.post-card .host,  article.podcast .meta, article.podcast .host, .orbit-post-grid article.post-card.episode .meta, article.episode .host {
   display: block;
   font-size: 0.875em;
   font-weight: 500;
@@ -918,7 +918,7 @@ ul.category-pills  {
   margin-bottom: 10px;
 }
 
-.single.single-podcast article.post-card .host {
+.single.single-podcast article.post-card .host, article.episode .host {
   color: #bdbdbd;
 }
 

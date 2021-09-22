@@ -60,6 +60,10 @@ class BTP_EPISODE extends BTP_SINGLETON {
     {
         return [
             [ 
+              'label' => 'Hosted by',
+              'key'   => 'btp_episode_host'
+            ],
+            [ 
               'label' => 'Episode Number',
               'key'   => 'btp_episode_number'
             ],
