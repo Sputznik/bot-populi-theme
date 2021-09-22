@@ -21,7 +21,7 @@
                     if( $this->query->have_posts() ) { $this->query->the_post(); ?>
                          <?php $post_type = get_post_type();?>
                         <article class='post-card <?php _e($post_type);?>'>
-                            <?php get_template_part( 'template-parts/orbit/podcast' ); ?>
+                            <?php get_template_part( 'template-parts/orbit/episode' ); ?>
                         </article> <?php
                         $k++ ;
                     } else {
