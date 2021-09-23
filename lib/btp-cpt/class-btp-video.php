@@ -6,7 +6,7 @@
 class BTP_VIDEO extends BTP_SINGLETON {
 
     public function __construct() {
-        
+
         /* Creating cpt using orbit-bundle plugin */
         add_filter( 'orbit_post_type_vars', function( $post_types ){
             $post_types['video'] = [
@@ -22,7 +22,7 @@ class BTP_VIDEO extends BTP_SINGLETON {
                 'taxonomies'	=> [ 'category' ],
                 'menu_icon' 	=> 'dashicons-video-alt2',
                 'public'		=> true,
-                'supports'	=> array( 'title', 'editor', 'thumbnail' )
+                'supports'	=> array( 'title', 'editor', 'thumbnail', 'author' )
             ];
             return $post_types;
         } );

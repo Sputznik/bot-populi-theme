@@ -211,3 +211,10 @@ function btp_get_author_posts( $current_author, $per_page = 6 ) {
 
   return $shortcode_str;
 }
+
+// ENABLE COAUTHOR METABOX
+add_filter( 'coauthors_count_published_post_types', function( $post_types ) {
+   $coauthor_cpt_support = array('episode','video');
+   array_push( $coauthor_cpt_support );
+   return $post_types;
+} );

@@ -2,12 +2,12 @@
 
 /**
  * Registers custom post type for Episode.
- * Episode CPT is linked as child of Podcast CPT   
+ * Episode CPT is linked as child of Podcast CPT
  */
 class BTP_EPISODE extends BTP_SINGLETON {
 
     public function __construct() {
-        
+
         /* Creating Episode CPT using orbit-bundle plugin */
         add_filter( 'orbit_post_type_vars', function( $post_types ){
             $post_types['episode'] = [
@@ -23,7 +23,7 @@ class BTP_EPISODE extends BTP_SINGLETON {
                 'taxonomies'	=> [ 'category' ],
                 'menu_icon' 	=> 'dashicons-video-alt3',
                 'public'		=> true,
-                'supports'	=> array( 'title', 'editor', 'thumbnail' )
+                'supports'	=> array( 'title', 'editor', 'thumbnail', 'author' )
             ];
             return $post_types;
         } );
@@ -39,16 +39,16 @@ class BTP_EPISODE extends BTP_SINGLETON {
     /**
      * Callback for add_meta_boxes
      */
-    public function addMetaBoxCb()      
+    public function addMetaBoxCb()
     {
         $fields = [];
 
-        // attach meta fields callback that needs to be rendered 
+        // attach meta fields callback that needs to be rendered
         $fields['btp-episode-fields'] = [$this, 'renderMetaFields'];
-        
-        //inject fields from other place  
+
+        //inject fields from other place
         $fields = apply_filters( 'btp-episode-meta-box-fields', $fields );
-        
+
         add_meta_box( 'btp-episode-meta', 'Episode Information', [ $this, 'renderMetaBoxCb' ], ['episode'], 'normal', 'low', $fields );
     }
 
@@ -59,21 +59,21 @@ class BTP_EPISODE extends BTP_SINGLETON {
     public function episodeMetaFields()
     {
         return [
-            [ 
+            [
               'label' => 'Hosted by',
               'key'   => 'btp_episode_host'
             ],
-            [ 
+            [
               'label' => 'Episode Number',
               'key'   => 'btp_episode_number'
             ],
 
-            [ 
+            [
               'label' => 'Episode Duration',
               'key'   => 'btp_episode_duration'
             ],
-            
-            [ 
+
+            [
               'label' => 'Episode Url (SoundCloud Embed code)',
               'key'   => 'btp_episode_url',
               'type'  => 'textarea',
@@ -84,28 +84,28 @@ class BTP_EPISODE extends BTP_SINGLETON {
 
 
     /**
-     * Helper function which is attached as callback for adding metabox field 
+     * Helper function which is attached as callback for adding metabox field
      */
     public function renderMetaFields()
-    {   
-        global $post; 
-        
+    {
+        global $post;
+
         $fields = $this->episodeMetaFields();
-        
+
         foreach ($fields as $meta) : ?>
             <div style='margin-bottom: 15px;'>
                 <label> <?php echo $meta['label']?> </label>
                 <?php if( isset($meta['type']) && 'textarea' == $meta['type'] ) { ?>
-                    <textarea name="<?php echo $meta['key']?>" cols="30" rows="10"><?php echo get_post_meta($post->ID, $meta['key'], true);?></textarea>    
+                    <textarea name="<?php echo $meta['key']?>" cols="30" rows="10"><?php echo get_post_meta($post->ID, $meta['key'], true);?></textarea>
                 <?php } else { ?>
-                    <input type="text" name="<?php echo $meta['key']?>" value="<?php echo get_post_meta($post->ID, $meta['key'], true)?>"> 
+                    <input type="text" name="<?php echo $meta['key']?>" value="<?php echo get_post_meta($post->ID, $meta['key'], true)?>">
                 <?php } ?>
-                
+
             </div> <?php
         endforeach;
-        
+
     }
-    
+
 
     /**
      * Callback function for add_meta_box
@@ -115,7 +115,7 @@ class BTP_EPISODE extends BTP_SINGLETON {
         <div class="form-wrap">
            <div class="orbit-form-group field-text"> <?php
                 wp_nonce_field( 'btp_meta_box', 'btp_meta_box_nonce' );
-                
+
                 if( isset( $meta_box['args' ] ) && is_array( $meta_box['args'] ) ){
                     foreach ($meta_box['args'] as $slug => $callback ) {
                         if( is_callable( $callback ) ){
@@ -132,7 +132,7 @@ class BTP_EPISODE extends BTP_SINGLETON {
      * Callback function for save_post
      */
     public function saveMetaBoxCb( $post_id ){
-        
+
         // Check if our nonce is set.
         if ( ! isset( $_POST['btp_meta_box_nonce'] ) ) return;
 
@@ -147,7 +147,7 @@ class BTP_EPISODE extends BTP_SINGLETON {
 
         //save episode's fields
         $this->saveMetaFields($post_id);
-        
+
     }
 
 
