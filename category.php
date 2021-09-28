@@ -31,13 +31,17 @@ $image = get_term_meta($category->term_id, 'btp_category_image', true);
             ?>
             <h2 class="title">See other sections</h2>
             <div class="wrapper">
-                <?php foreach($categories as $category ) : $permalink = get_category_link($category->term_id); ?>
+                <?php foreach( $categories as $category ) : $permalink = get_category_link($category->term_id);
+                      $category_image = get_term_meta( $category->term_id, 'btp_category_image', true  );  ?>
                     <div class="category-item">
-                        <div class="aside"></div>
+                        <a href="<?php _e( $permalink ); ?>">
+                          <div class="aside" <?php if( !empty( $category_image ) ){ echo 'style="background-image: url('.$category_image.');"'; } ?>>
+                          </div>
+                        </a>
                         <div>
                             <div class="category-title">
                                 <a href="<?php _e($permalink); ?>">
-                                    <?php _e($category->name); ?>    
+                                    <?php _e($category->name); ?>
                                 </a>
                             </div>
                             <div class="description">

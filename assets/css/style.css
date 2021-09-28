@@ -1378,8 +1378,11 @@ footer h3.widget-title {
 }
 
 .similar-categories .category-item .aside {
-  background-color: #C4C4C4;
   min-height: 150px;
+  background-color: #C4C4C4;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
 }
 
 .similar-categories .category-item .category-title {
