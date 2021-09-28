@@ -23,7 +23,8 @@
             foreach( $terms as $term ): $contributor = $coauthors_plus->get_coauthor_by( 'user_nicename', $term->name ); ?>
             <li>
               <a href="<?php _e( get_author_posts_url( $contributor->ID, $contributor->user_nicename ) ); ?>">
-                <?php _e( get_avatar( $contributor->ID, '320', '', $contributor->display_name ) ); ?>
+                <?php //_e( get_avatar( $contributor->ID, '320', '', $contributor->display_name ) ); ?>
+                <div class="author-avatar" style="background-image: url(<?php echo get_avatar_url( $contributor->ID );?>);"></div>
                 <div class='orbit-user-name'>
                   <?php _e( $contributor->display_name ); ?>
                 </div>
