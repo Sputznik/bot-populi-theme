@@ -16,6 +16,7 @@ b, strong {
 }
 a {
   color: #3D3D3D;
+  font-family: inherit !important;
 }
 
 p a:hover {
