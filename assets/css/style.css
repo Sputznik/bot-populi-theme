@@ -1180,6 +1180,18 @@ body.search {
   color: #FAFAFA;
 }
 
+#searchModal .form-control:-ms-input-placeholder {
+  color: #FAFAFA;
+}
+
+#searchModal .form-control::-ms-input-placeholder {
+  color: #FAFAFA;
+}
+
+#searchModal .form-control::placeholder {
+  color: #FAFAFA;
+}
+
 
 #searchModal .btn-outline-secondary {
   color: #FFF;
