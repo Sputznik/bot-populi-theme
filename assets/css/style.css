@@ -588,6 +588,9 @@ body.single {
   border: 1px solid #E0E0E0;
 }
 
+.single .post-content {
+  margin-top: 30px;
+}
 
 blockquote, .wp-block-quote {
   margin: 50px 0px 50px 60px;
@@ -1799,8 +1802,8 @@ footer h3.widget-title {
     max-width: 1000px;
   } */
 
-  .single .post-content {
-    margin-top: -200px;
+  .single-post .post-content {
+    margin-top: -230px;
   }
 
   .dropdown-toggle::after {
