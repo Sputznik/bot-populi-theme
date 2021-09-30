@@ -3,7 +3,7 @@
     global $wp_query;
     // $curauth = get_userdata(intval($author));
     $current_author = $wp_query->get_queried_object();
-    $image = BTP_DIR_URI . '/assets/images/author-banner.jpg';
+    $image = 'https://botpopuli.net/wp-content/uploads/2021/09/Contributors.png';
 ?>
 
 <div class="featured" style="background-image: url('<?php _e($image);?>')">
