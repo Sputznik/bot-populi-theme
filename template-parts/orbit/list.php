@@ -16,6 +16,6 @@
     </div>
 	<div class="meta">
         <?php btp_get_categories($post_id);?>
-        <?php _e(get_the_date( 'F j' ));?> | <?php echo ucfirst($post_type); ?> <!--<?php // echo do_shortcode('[rt_reading_time postfix="min read"]'); ?> | <?php // _e(get_the_author());?>-->
+        <?php _e(get_the_date( 'F j' ));?> | <?php echo ucfirst($post_type); ?> <?php // echo do_shortcode('[rt_reading_time postfix="min read"]'); ?> <?php // _e(get_the_author());?>
     </div>
 </div>

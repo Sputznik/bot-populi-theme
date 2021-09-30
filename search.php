@@ -1,11 +1,11 @@
-<?php 
-    get_header(); 
-    
-    $s = get_search_query();
-    
+<?php
+    get_header();
 
-    $sort = isset($_GET['sort']) ? $_GET['sort'] : 'date-desc'; 
-                
+    $s = get_search_query();
+
+
+    $sort = isset($_GET['sort']) ? $_GET['sort'] : 'date-desc';
+
     switch ($sort) {
         case 'date-asc':
             $orderby = "date";
@@ -31,7 +31,7 @@
 		<div class="col-md-12">
            <h1 class="search-title">Search Results</h1>
            <div class="btp-separator d-none d-md-block"></div>
-             
+
            <form method="GET" action="<?php bloginfo('url');?>">
                 <div class="d-flex flex-row flex-grow-1">
                     <input class="form-control border-right-0 rounded-0" name="s" placeholder="Enter search query" value="<?php _e($s);?>">
@@ -52,22 +52,20 @@
                         </select>
                     </div>
                 </div>
-        
+
             </form>
-        
+
             <div class="btp-separator"></div>
 
         </div>
     </div>
-    <div class="row col-md-12 tag mt-5">    
+    <div class="row col-md-12 tag mt-5">
         <?php
             $output = do_shortcode('[orbit_query post_type="post,podcast,episode,video" s="'. $s .'" order="'. $order .'" orderby="'. $orderby .'" pagination="1" style="list" posts_per_page="6"]');
-
-            echo $output; ?>        
-    
-        </div>
+            echo $output; ?>
     </div>
-</div>    
+  </div>
+</div>
 
 
 
