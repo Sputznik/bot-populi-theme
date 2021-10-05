@@ -42,7 +42,7 @@ class BTP_THEME extends BTP_SINGLETON {
           $folders[] = get_template_directory() . '/so-widgets/';
           return $folders;
         });
-        
+
     }
 
 
@@ -68,6 +68,7 @@ class BTP_THEME extends BTP_SINGLETON {
         wp_register_script('bootstrap-script', BTP_DIR_URI . '/assets/js/bootstrap.bundle.min.js', ['jquery'], false, true);
         wp_register_script('btp-script', BTP_DIR_URI . '/assets/js/main.js', [], filemtime( BTP_DIR_PATH . '/assets/js/main.js' ), true);
         wp_register_script('btp-image-popup', BTP_DIR_URI . '/assets/js/btp-image-popup.js', [], filemtime( BTP_DIR_PATH . '/assets/js/btp-image-popup.js' ), true);
+        wp_register_script('ionicons-script', 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js', [], '5.5.2', true);
 
         wp_localize_script( 'btp-script', 'btp_settings', [
             'ajax' => admin_url( 'admin-ajax.php' ),
@@ -82,6 +83,8 @@ class BTP_THEME extends BTP_SINGLETON {
         wp_enqueue_script('bootstrap-script');
         wp_enqueue_script('btp-script');
         wp_enqueue_script('btp-image-popup');
+        wp_enqueue_script('ionicons-script');
+
     }
 
 

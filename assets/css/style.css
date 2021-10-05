@@ -109,6 +109,10 @@ header {
   margin-left: 10px;
 }
 
+.nav-search-item > ion-icon{
+  --ionicon-stroke-width: 70px;
+}
+
 .navbar-nav .active .nav-link {
   color: #9F00C5;
   font-weight: 600;

@@ -29,7 +29,7 @@
         'walker'            => new WP_Bootstrap_Navwalker(),
         ] );
     ?>
-    <a class="nav-search-item" href="#" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search"></i></a>
+    <a class="nav-search-item" href="#" data-toggle="modal" data-target="#searchModal"><ion-icon name="search-outline"></ion-icon></a>
   </div>
 </nav>
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
