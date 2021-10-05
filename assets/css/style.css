@@ -110,6 +110,7 @@ header {
 }
 
 .nav-search-item > ion-icon{
+  color: #9F00C5;
   --ionicon-stroke-width: 70px;
 }
 
