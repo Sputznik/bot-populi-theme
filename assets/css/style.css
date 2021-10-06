@@ -1460,7 +1460,7 @@ footer h3.widget-title {
     color: #9F00C5;
   }
 
-  header i {
+  header i, .nav-search-item > ion-icon {
     color: #FFF;
   }
 
