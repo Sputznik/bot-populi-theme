@@ -56,6 +56,28 @@ function btp_get_categories($post_id)
     }
 }
 
+function btp_get_categories_with_type( $post_id, $type ){
+
+    $categories = get_the_category( $post_id );
+
+    echo '<ul class="category-pills">';
+    if( $categories && count( $categories ) ){
+      foreach ($categories as $cat) {
+        echo '<li>'.$cat->name.'</li>';
+      }
+    }
+    echo '<li>'.$type.'</li>';
+    echo '</ul>';
+}
+
+function add_query_vars_filter( $vars ){
+  $vars[] = "keyword";
+  $vars[] = "type";
+  $vars[] = "section_name";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
+
 
 /**
  * Returns list of episodes for a given podcast series
