@@ -71,9 +71,7 @@ function btp_get_categories_with_type( $post_id, $type ){
 }
 
 function add_query_vars_filter( $vars ){
-  $vars[] = "keyword";
   $vars[] = "type";
-  $vars[] = "section_name";
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
