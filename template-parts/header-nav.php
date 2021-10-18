@@ -50,7 +50,7 @@
             </div>
             <div class="col-auto">
                 <button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
-                    <i class="fa fa-search"></i>
+                    <ion-icon name="search-outline"></ion-icon>
                 </button>
             </div>
           </div>

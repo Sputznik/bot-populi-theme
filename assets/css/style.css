@@ -17,10 +17,12 @@ b, strong {
 a {
   color: #9F00C5;
   font-family: inherit !important;
+  text-decoration: none;
 }
 
 p a:hover {
   color: #ff7a30;
+  text-decoration: none;
 }
 
 h1 { font-size: 3em; line-height: 60px; font-weight: 600;}
@@ -103,6 +105,7 @@ header {
 .navbar-nav .nav-link {
   color: #3d3d3d;
   margin: 0 10px;
+  font-weight: 600;
 }
 
 .nav-search-item {
@@ -155,7 +158,7 @@ header i {
 }
 
 header nav a:hover {
-  font-weight:600;
+  color: #9f00c5 !important;
 }
 header nav a:active {
   color: #9F00C5;
@@ -192,17 +195,19 @@ header nav a:active {
   bottom: 30px;
 }
 
-#btp-homepage-slider .carousel-caption .title {
+#btp-homepage-slider .carousel-caption .title a {
   color: #FAFAFA;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 1.875em;
+  /*font-size: 1.875em;*/
   line-height: 38px;
-  max-height: 100px;
-  margin-bottom: 68px;
+}
+#btp-homepage-slider .carousel-caption .title a:hover {
+  text-decoration: none;
+  color: #ff7a30;
 }
 
-#btp-homepage-slider .carousel-caption a {
+#btp-homepage-slider .carousel-caption a.btn {
   text-decoration: none;
   border: 1px solid #fafafa;
   color: #fafafa;
@@ -212,10 +217,11 @@ header nav a:active {
   padding: 12px 30px;
   text-transform: uppercase;
 }
-#btp-homepage-slider .carousel-caption a:hover {
+#btp-homepage-slider .carousel-caption a.btn:hover {
   background-color: #fafafa;
   color: #111;
 }
+
 
 /* ---------- so tabs override ---------------------- */
 .sow-tabs-tab-container, .sow-tabs-tab-selected {
@@ -229,7 +235,9 @@ header nav a:active {
   line-height: 38px!important;
   color: #828282;
 }
-
+.sow-tabs-title.sow-tabs-title-icon-left:hover {
+  color: #3d3d3d;
+}
 .sow-tabs-tab-selected .sow-tabs-title {
   font-weight: 600;
   border-bottom: 9px solid #9F00C5;
@@ -355,7 +363,9 @@ main .overlay-div {
   overflow: hidden;
   background-color: white;
 }
-
+.orbit-post-grid article.post-card:hover {
+    box-shadow: 2px 2px 7px 0px rgba(5,5,5,0.25);
+}
 .orbit-post-grid article.post-card .image-wrapper {
   display: contents;
   position: relative;
@@ -364,7 +374,9 @@ main .overlay-div {
 .orbit-post-grid article.post-card a {
   text-decoration: none;
 }
-
+.orbit-post-grid article.post-card a:hover {
+  color: #ff7a30;
+}
 article.post-card .cat-overlay {
   position: absolute;
   bottom: 5%;
@@ -487,9 +499,11 @@ body.single {
 
 .btp-social-icons a {
   display: inline!important;
-  color: #fafafa!important;
+  color: #fafafa;
 }
-
+.btp-social-icons a:hover {
+  color: #ff7a30;
+}
 .btp-social-icons li i {
   font-size: 16px;
 }
@@ -527,7 +541,7 @@ body.single {
 .progress-indicator {
   width: 10px;
   height:0%;
-  background-color: #9F00C5;
+  background-color: #ff7a30;
 
 }
 
@@ -576,7 +590,9 @@ body.single {
   text-decoration: underline;
   font-size: 1.25em;
 }
-
+.single .post-author-link .post-author a:hover, .single .post-author-link a.summary-link:hover {
+  color: #ff7a30;
+}
 
 .single #collapseSummary {
   font-family: 'Merriweather', serif;
@@ -1287,7 +1303,7 @@ body.search {
 }
 
 
-/* -------------end of search template---- */
+/* -------------end of search template------------ */
 
 
 /*------------------- footer ------------------- */
@@ -1441,6 +1457,31 @@ footer h3.widget-title {
   height: auto;
 }
 
+/* -------------- Siteorigin widget custom classes ------------------ */
+
+/* homepage sections row */
+.link-highlight h6 a:hover {
+  color:#ff7a30!important;
+  text-decoration:none;
+}
+
+/* team section on about page */
+.team-tabs .sow-tabs .sow-tabs-tab-container {
+    background-color: #ffffff;
+    padding: 12px 10px 0px 0px!important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+		column-gap: 50px;
+}
+
+.team-tabs .so-widget-sow-tabs-default-17b7e4d78d87-3423 .sow-tabs .sow-tabs-tab-container .sow-tabs-tab.sow-tabs-tab-selected, .so-widget-sow-tabs-default-17b7e4d78d87-3423 .sow-tabs .sow-tabs-tab-container .sow-tabs-tab:hover {
+    color: #9f00c5;
+		border-bottom: solid 4px;}
+
+.team-tabs .sow-tabs-tab:hover {
+    color: red;
+		border-bottom: solid 4px;}
 
 /* -------------------------- MEDIA QUERIES ------------------------- */
 
@@ -1853,5 +1894,7 @@ footer h3.widget-title {
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 68px;
+    max-height: 100px;
   }
 }

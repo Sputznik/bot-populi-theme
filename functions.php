@@ -199,19 +199,19 @@ function btp_get_social_share_links( $aside = true ) {
     <ul class="btp-social-icons list-unstyled <?php !$aside ? _e('list-inline') : ''; ?>">
         <!-- link -->
         <li class="<?php !$aside ? _e('list-inline-item ') : ''; ?>social-icon">
-            <a href="<?php _e($permalink);?>" class="btp-copy-link"><i class="fas fa-link"></i></a>
+            <a href="<?php _e($permalink);?>" class="btp-copy-link"><ion-icon name="link"></ion-icon></a>
         </li>
         <!-- facebook -->
         <li class="<?php !$aside ? _e('list-inline-item ') : ''; ?>social-icon" data-href="<?php _e($permalink);?>">
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php _e($permalink);?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php _e($permalink);?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><ion-icon name="logo-facebook"></ion-icon></a>
         </li>
         <!-- email -->
         <li class="<?php !$aside ? _e('list-inline-item ') : ''; ?>social-icon">
-            <a href="mailto:?&subject=<?php _e($title);?>&body=<?php _e($permalink);?>"><i class="far fa-envelope"></i></a>
+            <a href="mailto:?&subject=<?php _e($title);?>&body=<?php _e($permalink);?>"><ion-icon name="mail-outline"></ion-icon></a>
         </li>
         <!-- twitter -->
         <li class="<?php !$aside ? _e('list-inline-item ') : ''; ?>social-icon">
-            <a target="_blank" href="https://twitter.com/intent/tweet?text=<?php _e($desc);?>&url=<?php _e($permalink);?>&via=PopuliBot"><i class="fab fa-twitter"></i></a>
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=<?php _e($desc);?>&url=<?php _e($permalink);?>&via=PopuliBot"><ion-icon name="logo-twitter"></ion-icon></a>
         </li>
     </ul>
     <?php ob_end_flush();

@@ -22,7 +22,7 @@
   <form method="GET" class="archive-search" >
     <div class="d-flex flex-row flex-grow-1">
       <button class="btn border-right-0 rounded-0 rounded-right btn-search" type="submit">
-        <i class="fa fa-search"></i>
+        <ion-icon name="search-outline"></ion-icon>
       </button>
       <input class="form-control pl-0 border-left-0 rounded-0 search-input" name="q" placeholder="Search All Archives" value="<?php _e( $search_query ); ?>" autocomplete="off">
     </div>
