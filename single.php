@@ -35,8 +35,8 @@
                 ?>
                 <div class="summary-wrapper">
                     <?php if($summary && strlen($summary) > 1 ) : ?>
-                        <a data-toggle="collapse" class="" href="#collapseSummary">
-                        Summary &nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                        <a data-toggle="collapse" class="summary-link" href="#collapseSummary">
+                        Summary &nbsp;&nbsp;<ion-icon name="caret-down-outline"></ion-icon>
                         </a>
                     <?php endif; ?>
 
