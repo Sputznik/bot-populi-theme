@@ -13,8 +13,8 @@
     'post_type' => isset( $_GET['type'] ) && $_GET['type'] != 'all-types' ? ( $_GET['type'] == 'article' ? 'post' : $_GET['type'] ) : array('post','podcast','video'),
     's' => $search_query,
     'post_status' =>'publish',
-    'category_name' => isset( $_GET['category_name'] )  && $_GET['category_name'] != 'all-topics' ? $_GET['category_name'] : '',
-    'tag' => isset( $_GET['tag'] )  && $_GET['tag'] != 'all-keywords' ?  $_GET['tag'] : ''
+    'category_name' => isset( $_GET['category'] ) && $_GET['category'] != 'all-sections' ? $_GET['category'] : '',
+    'tag' => isset( $_GET['post_tag'] ) && $_GET['post_tag'] != 'all-keywords' ?  $_GET['post_tag'] : ''
   );
   $query = new WP_Query( $args );
   add_filter( 'excerpt_length', function( $length ) { return 26; }, 999 );
@@ -25,7 +25,7 @@
 <div class="container overlay-div">
   <div class="row">
     <div class="col-sm-12">
-      <?php get_template_part('template-parts/multi-filters');?>
+      <?php _e( do_shortcode('[btp_filters]') );?>
       <?php if( $query->have_posts() ) : ?>
       <div class="orbit-posts-wrapper template-archive">
         <div class="orbit-post-grid">

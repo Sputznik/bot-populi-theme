@@ -57,16 +57,12 @@ class BTP_THEME extends BTP_SINGLETON {
         wp_register_style('btp-style', BTP_DIR_URI . '/assets/css/style.css', ['bootstrap'], filemtime( BTP_DIR_PATH . '/assets/css/style.css' ), 'all');
         wp_register_style('btp-sow', BTP_DIR_URI . '/assets/css/sow.css', [], filemtime( BTP_DIR_PATH . '/assets/css/sow.css' ), 'all');
 
-        // Filter
-        wp_register_style('btp-archive-filter-style', BTP_DIR_URI . '/assets/css/btp-archive-filter.css', ['bootstrap'], filemtime( BTP_DIR_PATH . '/assets/css/btp-archive-filter.css' ), 'all');
-
 
         // Enqueue Styles
         wp_enqueue_style('bootstrap');
         wp_enqueue_style('font-awesome');
         wp_enqueue_style('btp-style');
         wp_enqueue_style('btp-sow');
-        wp_enqueue_style( 'btp-archive-filter-style' );
 
 
         //Register Scripts
