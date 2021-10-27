@@ -12,12 +12,13 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 	}
 
 	function assets(){
+		if( is_page_template("page_archive.php") ){
+			//ENQUEUE STYLES
+			wp_enqueue_style('btp-filters-css', BTP_DIR_URI.'/lib/filters/assets/css/filters.css', array(), time() );
 
-		//ENQUEUE STYLES
-		wp_enqueue_style('btp-filters-css', BTP_DIR_URI.'/lib/filters/assets/css/filters.css', array(), time() );
-
-		//ENQUEUE SCRIPTS
-		wp_enqueue_script( 'btp-filters-dropdown-js', BTP_DIR_URI.'/lib/filters/assets/js/dropdown-checkboxes.js', array('jquery'), time(), true );
+			//ENQUEUE SCRIPTS
+			wp_enqueue_script( 'btp-filters-dropdown-js', BTP_DIR_URI.'/lib/filters/assets/js/dropdown-checkboxes.js', array('jquery'), time(), true );
+		}
 	}
 
 	// GET ALL THE FILTERS AS ARRAY
@@ -26,9 +27,17 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 			array(
 				'form' 						=> 'dropdown',
 				'type'						=> 'tax',
-				'typeval'					=> 'category',
+				'typeval'					=> 'section',
 				'default_option'	=> 'All sections',
 				'items'						=> $this->getTerms('category')
+			),
+			array(
+				'form' 						=> 'dropdown',
+				'type'						=> 'tax',
+				'typeval'					=> 'author',
+				'default_option'	=> 'All authors',
+				'items'						=> $this->getTerms('author'),
+				'class'						=> 'dropdown-lg author'
 			),
 			array(
 				'form' 						=> 'dropdown',
@@ -40,10 +49,20 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 			array(
 				'form' 						=> 'chips',
 				'type'						=> 'tax',
-				'typeval'					=> 'post_tag',
+				'typeval'					=> 'keywords',
 				'default_option'	=> 'All keywords',
 				'items'						=> $this->getTerms('post_tag')
-			)
+			),
+			array(
+				'form' 						=> 'dropdown',
+				'type'						=> 'custom',
+				'typeval'					=> 'sort',
+				'default_option'	=>	'Newest to oldest',
+				'items'						=> array( array(
+					'slug' => 'asc',
+					'name' => 'Oldest to newest'
+				) ),
+			),
 		);
 
 	}
@@ -79,6 +98,49 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 				'name' => 'Video'
 			)
 		);
+	}
+
+	function getCurrentURL(){
+    global $wp;
+
+    // get current url with query string.
+    $current_url =  home_url( $wp->request );
+
+		// get the position where '/page.. ' text start.
+		$pos = strpos( $current_url , '/page' );
+
+    // REMOVE PAGINATION PARAMETERS
+    if( $pos !== false ){
+      // remove string from the specific postion
+      $current_url = substr( $current_url, 0, $pos );
+    }
+
+    return $current_url;
+  }
+
+	public static function getResultChips( $params ){
+		$res_chips = array();
+
+		if( isset( $params ) ){
+	    foreach( $params as $slug => $value ){
+	      if( isset( $slug ) && !empty( $value ) ){
+	        if( $slug != 'sort' ){
+	          $res_chips[$slug] = $value;
+	        }
+	        else{
+	          $new_val = ( $value == 'asc' ) ? 'Oldest to newest': ( empty( $value ) ? 'Newest to oldest' : '' );
+	          $res_chips[$slug] = $new_val;
+	        }
+	      }
+	    }
+	  }
+
+		return $res_chips;
+
+	}
+
+	public static function paramsCount( $params ){
+		return ( count( self::getResultChips( $params ) ) );
 	}
 
 	/* SHORTCODE CALLBACK */

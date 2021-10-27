@@ -6,17 +6,45 @@
 
   get_header();
   $image = get_the_post_thumbnail_url();
-  $search_query = ! empty( $_GET[ 'q' ] ) ? $_GET[ 'q' ] : '';
+  $search_query = ! empty( $_GET[ 'phrase' ] ) ? $_GET[ 'phrase' ] : '';
   $paged = (  get_query_var('paged')  ) ? get_query_var('paged') : 1;
+  $tax_query = array( 'relation' => 'OR' );
   $args = array(
-    'paged'          => $paged,
-    'post_type' => isset( $_GET['type'] ) && $_GET['type'] != 'all-types' ? ( $_GET['type'] == 'article' ? 'post' : $_GET['type'] ) : array('post','podcast','video'),
+    'paged'     => $paged,
+    'post_type' => isset( $_GET['type'] ) && $_GET['type'] != '' ? ( $_GET['type'] == 'article' ? 'post' : $_GET['type'] ) : array('post','podcast','video'),
     's' => $search_query,
-    'post_status' =>'publish',
-    'category_name' => isset( $_GET['category'] ) && $_GET['category'] != 'all-sections' ? $_GET['category'] : '',
-    'tag' => isset( $_GET['post_tag'] ) && $_GET['post_tag'] != 'all-keywords' ?  $_GET['post_tag'] : ''
+    'post_status' =>'publish'
   );
+
+  // SORT PARAMETER
+  if( isset( $_GET['sort'] ) && $_GET['sort'] ){
+    $args['orderby'] = "date";
+    $args['order'] = $_GET['sort'];
+  }
+
+  // TAX QUERY
+  if( isset( $_GET['section'] ) && $_GET['section'] ){
+    array_push( $tax_query, array(
+      'taxonomy' => 'category',
+      'field' => 'slug',
+      'terms' => $_GET['section'],
+    ) );
+  }
+
+  if( isset( $_GET['keywords'] ) && $_GET['keywords'] ){
+    array_push( $tax_query, array(
+      'taxonomy' => 'post_tag',
+      'field' => 'slug',
+      'terms' => $_GET['keywords'],
+    ) );
+  }
+
+  if( !empty( $tax_query ) ){
+    $args['tax_query'] = $tax_query;
+  }
+
   $query = new WP_Query( $args );
+
   add_filter( 'excerpt_length', function( $length ) { return 26; }, 999 );
 ?>
 <div class="featured" style="background-image: url('<?php _e( $image );?>')">
@@ -26,6 +54,7 @@
   <div class="row">
     <div class="col-sm-12">
       <?php _e( do_shortcode('[btp_filters]') );?>
+      <?php get_template_part('lib/filters/templates/search-results', null, $query->found_posts );?>
       <?php if( $query->have_posts() ) : ?>
       <div class="orbit-posts-wrapper template-archive">
         <div class="orbit-post-grid">
