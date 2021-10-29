@@ -5,9 +5,9 @@
  * Podcasts CPT serves as a parent for Episode CPT
  */
 class BTP_PODCAST extends BTP_SINGLETON {
-    
+
     public function __construct() {
-        
+
         // hooks into episode cpt metabox
         add_filter( 'btp-episode-meta-box-fields', function( $fields ){
             $fields['btp-podcast'] = [ $this, 'renderMetaBox' ];
@@ -34,7 +34,7 @@ class BTP_PODCAST extends BTP_SINGLETON {
                   ],
                   'public'		=> true,
                   'menu_icon'   => 'dashicons-playlist-video',
-                  'supports'	=> [ 'title', 'editor','thumbnail' ]
+                  'supports'	=> [ 'title', 'editor','thumbnail', 'author' ]
               );
             return $post_types;
         } );
@@ -75,13 +75,13 @@ class BTP_PODCAST extends BTP_SINGLETON {
             'autocomplete_value' => $post->post_parent ? get_the_title( $post->post_parent ) : "",
             'url'	             => admin_url('admin-ajax.php?action=podcast_json')
         );
-    
+
         echo "<div data-behaviour='btp-autocomplete' data-field='".wp_json_encode( $field )."'></div>";
     }
 
 
     /**
-     * Returns Podcast Title as Json Array 
+     * Returns Podcast Title as Json Array
      */
     function getJson(){
         global $wpdb;
