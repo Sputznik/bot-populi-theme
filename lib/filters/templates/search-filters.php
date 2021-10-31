@@ -4,7 +4,7 @@
 ?>
 <div class="archive-search-wrapper">
   <h1 class="page-title">ARCHIVES</h1>
-  <h6 class="page-subtitle">Search for a word, filter using advanced search</h6>
+  <h6 class="page-subtitle">Explore our past publication here! Search for a word, and filter using advanced search.</h6>
   <form method="GET" class="archive-search" action="<?php _e( $this->getCurrentURL() );?>">
     <div class="d-flex flex-row flex-grow-1">
       <button class="btn border-right-0 rounded-0 rounded-right btn-search" type="submit">
