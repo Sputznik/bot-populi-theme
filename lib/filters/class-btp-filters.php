@@ -100,6 +100,28 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 		);
 	}
 
+	function getTaxQuery( $params ){
+
+		$tax_query = array('relation'=> 'OR');
+		$taxonomies = array(
+			'category' => 'section',
+			'post_tag' => 'keywords'
+		);
+
+    foreach ( $taxonomies as $taxonomy => $alias ){
+			if( isset( $params[$alias] ) && $params[$alias] ){
+				array_push( $tax_query, array(
+          'taxonomy' => $taxonomy,
+          'field' => 'slug',
+          'terms' => $params[$alias],
+        ) );
+      }
+    }
+
+		return $tax_query;
+
+  }
+
 	function getCurrentURL(){
     global $wp;
 

@@ -8,7 +8,9 @@
   $image = get_the_post_thumbnail_url();
   $search_query = ! empty( $_GET[ 'phrase' ] ) ? $_GET[ 'phrase' ] : '';
   $paged = (  get_query_var('paged')  ) ? get_query_var('paged') : 1;
-  $tax_query = array( 'relation' => 'OR' );
+  $main_tax_query = array();
+  $btp_filters = BTP_SEARCH_FILTERS_FORM::getInstance();
+  $tax_query = $btp_filters->getTaxQuery( $_GET );
   $args = array(
     'paged'     => $paged,
     'post_type' => isset( $_GET['type'] ) && $_GET['type'] != '' ? ( $_GET['type'] == 'article' ? 'post' : $_GET['type'] ) : array('post','podcast','video'),
@@ -22,25 +24,35 @@
     $args['order'] = $_GET['sort'];
   }
 
+  // AUTHOR
+  if( isset( $_GET['author'] ) && $_GET['author'] ){
+
+    $author_slug = str_replace("cap-", "", $_GET['author']);
+
+    $is_wpuser = get_user_by( 'slug', $author_slug );
+
+    if( $is_wpuser ){
+      $args['author_name'] = $author_slug;
+    }
+    else{
+
+      array_push( $main_tax_query, array(
+      'taxonomy' => 'author',
+      'field'    => 'slug',
+      'terms'    => $_GET['author'],
+      ) );
+
+    }
+
+  }
+
   // TAX QUERY
-  if( isset( $_GET['section'] ) && $_GET['section'] ){
-    array_push( $tax_query, array(
-      'taxonomy' => 'category',
-      'field' => 'slug',
-      'terms' => $_GET['section'],
-    ) );
+  if( count( $tax_query ) > 1 ){
+    array_push( $main_tax_query, $tax_query );
   }
 
-  if( isset( $_GET['keywords'] ) && $_GET['keywords'] ){
-    array_push( $tax_query, array(
-      'taxonomy' => 'post_tag',
-      'field' => 'slug',
-      'terms' => $_GET['keywords'],
-    ) );
-  }
-
-  if( !empty( $tax_query ) ){
-    $args['tax_query'] = $tax_query;
+  if( !empty( $main_tax_query ) ){
+    $args['tax_query'] = $main_tax_query;
   }
 
   $query = new WP_Query( $args );
