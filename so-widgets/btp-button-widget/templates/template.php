@@ -7,7 +7,7 @@
 <?php if( !empty( $instance['btn_text'] ) && $instance['btn_text'] ): ?>
 <span data-toggle='modal' class="btp-modal-btn" data-target="<?php _e( '#modal-'.$widget_id );?>">
   <span><?php _e( $instance['btn_text'] );?></span>
-  <i class="fas fa-long-arrow-alt-right"></i>
+  <ion-icon name="arrow-forward-outline"></ion-icon>
 </span>
 <div id="<?php _e( 'modal-'.$widget_id );?>" class="modal fade btp-img-modal" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">

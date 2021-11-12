@@ -770,8 +770,10 @@ figure img {
   text-decoration: none;
   cursor: pointer;
 }
-
-.episode-list-container tr.active td, .episode-list-container tr.active td a{
+.episode-list-container tr td a:hover {
+  color: #9F00C5;
+}
+.episode-list-container tr.active td, .episode-list-container tr.active td a, .episode-list-container tr.active td a:hover{
   color: #FAFAFA;
 }
 
@@ -1012,10 +1014,9 @@ ul.category-pills  {
 
 .single-video .video-list-container .title{
   padding: unset;
-  text-transform: uppercase;
   color: #3d3d3d;
   font-size: .875em;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 500;
   line-height: 15px;
 }
@@ -1037,6 +1038,7 @@ ul.category-pills  {
   font-size: .875em;
   line-height: 16px;
   font-weight: normal;
+  font-family: "Poppins", sans-serif;
 }
 
 .single-video .video-list-container .feat-img{
@@ -1067,11 +1069,19 @@ ul.category-pills  {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  color: #9F00C5;
+  color: white;
   font-size: 2em;
   cursor: pointer;
 }
-
+.single-video .video-list-container .play-btn: hover {
+  color: #9f00c5 !important;
+}
+.single-video .video-list-container .other-videos-title {
+  padding:12px 10px;
+  text-transform: uppercase;
+  color: #9F00C5;
+  font-family: "Poppins", sans-serif;
+}
 /* end of single-video.php */
 
 

@@ -33,7 +33,9 @@ ul.chips, ul.select {
 ul.chips li, ul.select li{
   position: relative;
 }
-
+ul.select li {
+  margin-bottom: 15px;
+}
 ul.chips li label,
 ul.select li label{
   font-family: Poppins;
@@ -156,8 +158,8 @@ ul.select li input[type="radio"]:checked + label {
 /* AUTHOR DROPDOWN */
 .btp-dropdown.open .btp-dropdown-menu.author{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
 }
 .btp-dropdown-menu.author li{
   /* border: 1px solid red; */
@@ -230,7 +232,6 @@ ul.select li input[type="radio"]:checked + label {
 .archive-search-wrapper .page-subtitle{
   font-size: 20px;
   line-height: 27px;
-  text-transform: capitalize;
 }
 
 .template-archive .orbit-post-grid {

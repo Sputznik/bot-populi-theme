@@ -2,7 +2,7 @@
 
 class BTP_SHORTCODE extends BTP_SINGLETON {
     public function __construct() {
-        add_shortcode( 'btp_back_btn', [$this, 'btp_back_btn_cb'] );       
+        add_shortcode( 'btp_back_btn', [$this, 'btp_back_btn_cb'] );
     }
 
 
@@ -17,10 +17,10 @@ class BTP_SHORTCODE extends BTP_SINGLETON {
         ), $atts );
 
         ob_start(); ?>
-        
+
         <button class="btp-btn">
 			<a href="<?php _e($args['slug']);?>"><?php _e($args['text']);?></a>
-			<i class="fas fa-long-arrow-alt-left"></i>
+			<ion-icon name="arrow-back-outline"></ion-icon>
 		</button>
 
         <?php return ob_end_flush();

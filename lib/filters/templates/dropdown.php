@@ -1,6 +1,6 @@
 <div class="btp-dropdown" data-behaviour="btp-dropdown-filter">
   <?php include( 'button.php' );?>
-  <ul class="btp-dropdown-menu select<?php if( isset( $args['class'] )&& $args['class'] ){ _e( " ".$args['class'] ); }?>" data-field-type="select" role="menu" aria-labelledby="menu1">
+  <ul class="btp-dropdown-menu select<?php if( isset( $args['class'] )&& $args['class'] ){ _e( " ".$args['class'] ); }?>" data-field-type="select" role="menu" aria-labelledby="selection menu for <?php _e( $args['name']."_default" );?>">
 		<li>
       <input type="radio" name="<?php _e( $args['name'] );?>" id="<?php _e( $args['name']."_default" );?>" value="">
       <label for="<?php _e( $args['name']."_default" );?>"><?php _e( isset( $args['default_option'] ) ? $args['default_option'] : "Select" ); ?></label>

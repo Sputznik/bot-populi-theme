@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="video-list-container">
-                        <div class="title">Other Videos</div>
+                        <div class="other-videos-title">Other Videos</div>
                         <?php if( is_array($videos) && count($videos) ) : ?>
 
                         <ul>
