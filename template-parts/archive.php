@@ -16,7 +16,8 @@
         $additional_meta = ucwords( get_post_meta( $post_id, 'btp_video_byline', true ) );
         break;
       default:
-        $additional_meta = $reading_time.' | '.ucwords( get_the_author() );
+        $author = function_exists( 'coauthors_posts_links' ) ? coauthors( null, null, null, null, false ) : get_the_author();
+        $additional_meta = $reading_time.' | '.ucwords( $author );
         break;
     }
 
