@@ -102,6 +102,8 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 
 	function getTaxQuery( $params ){
 
+		if( empty( $params['section'] ) && empty( $params['keywords'] ) ) return array();
+
 		$tax_query = array('relation'=> 'OR');
 		$taxonomies = array(
 			'category' => 'section',
@@ -116,6 +118,13 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
           'terms' => $params[$alias],
         ) );
       }
+			else{
+				array_push( $tax_query, array(
+          'taxonomy' => $taxonomy,
+          'field' => 'slug',
+          'terms' => wp_list_pluck( $this->getTerms( $taxonomy ), 'slug' ),
+        ) );
+			}
     }
 
 		return $tax_query;
