@@ -21,7 +21,8 @@ $inc_files = [
     'lib/btp-cpt/btp-cpt.php',
     'lib/class-btp-taxonomy-field.php',
     'lib/class-btp-shortcode.php',
-    'lib/filters/class-btp-filters.php'
+    'lib/filters/class-btp-filters.php',
+    'lib/class-btp-theme-customize.php'
 ];
 
 foreach ($inc_files as $file_to_include ) {
