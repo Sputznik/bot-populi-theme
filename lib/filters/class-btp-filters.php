@@ -46,13 +46,13 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 				'default_option'	=> 'All types',
 				'items'						=> $this->getTypes()
 			),
-			array(
-				'form' 						=> 'chips',
-				'type'						=> 'tax',
-				'typeval'					=> 'keywords',
-				'default_option'	=> 'All keywords',
-				'items'						=> $this->getTerms('post_tag')
-			),
+			// array(
+			// 	'form' 						=> 'chips',
+			// 	'type'						=> 'tax',
+			// 	'typeval'					=> 'keywords',
+			// 	'default_option'	=> 'All keywords',
+			// 	'items'						=> $this->getTerms('post_tag')
+			// ),
 			array(
 				'form' 						=> 'dropdown',
 				'type'						=> 'custom',
