@@ -46,6 +46,11 @@
 
   }
 
+  // YEAR PARAMETER
+  if( isset( $_GET['y'] ) && $_GET['y'] ){
+    $args['year'] = $_GET['y'];
+  }
+
   // TAX QUERY
   if( count( $tax_query ) > 1 ){
     array_push( $main_tax_query, $tax_query );

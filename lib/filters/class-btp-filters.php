@@ -56,6 +56,13 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 			array(
 				'form' 						=> 'dropdown',
 				'type'						=> 'custom',
+				'typeval'					=> 'y',
+				'default_option'	=> 'Year',
+				'items'						=> $this->getYears( 2019 )
+			),
+			array(
+				'form' 						=> 'dropdown',
+				'type'						=> 'custom',
 				'typeval'					=> 'sort',
 				'default_option'	=>	'Newest to oldest',
 				'items'						=> array( array(
@@ -130,6 +137,14 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 		return $tax_query;
 
   }
+
+	function getYears( $start_year ){
+		$years = array();
+		foreach( range( date('Y'), $start_year ) as $year ){
+			array_push( $years, array( 'slug' => $year, 'name'	=> $year ) );
+		}
+		return $years;
+	}
 
 	function getCurrentURL(){
     global $wp;

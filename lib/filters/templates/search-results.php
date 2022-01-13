@@ -12,7 +12,7 @@
       <ul class="list-unstyled">
         <?php foreach( $search_chips as $slug => $value ):?>
           <?php if( !empty( $value ) ):?>
-            <li class="label"><?php echo $slug.":"; ?></li>
+            <li class="label"><?php echo( $slug !='y' ? $slug : 'year' ); ?>:</li>
             <?php if( $slug != 'phrase' && $slug != 'keywords' ):?>
               <li class="param">
                 <?php echo str_replace( ["-",'cap'], " ", $value );?>
