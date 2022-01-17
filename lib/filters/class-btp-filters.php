@@ -18,6 +18,7 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 
 			//ENQUEUE SCRIPTS
 			wp_enqueue_script( 'btp-filters-dropdown-js', BTP_DIR_URI.'/lib/filters/assets/js/dropdown-checkboxes.js', array('jquery'), time(), true );
+			wp_enqueue_script( 'btp-author-filter', BTP_DIR_URI.'/lib/filters/assets/js/author-filter.js', array('jquery'), time(), true );
 		}
 	}
 
@@ -32,7 +33,7 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 				'items'						=> $this->getTerms('category')
 			),
 			array(
-				'form' 						=> 'dropdown',
+				'form' 						=> 'dropdown-with-search',
 				'type'						=> 'tax',
 				'typeval'					=> 'author',
 				'default_option'	=> 'All authors',

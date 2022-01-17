@@ -169,6 +169,8 @@ ul.select li input[type="radio"]:checked + label {
   line-height: 19px;
   color: #3D3D3D;
 }
+.btp-dropdown .btp-author-search{ grid-column: 1/3; }
+.btp-dropdown .btp-author-search > input[type=text]{ width: 100%;height: 40px; }
 /* AUTHOR DROPDOWN */
 
 .search-result-info{
@@ -389,7 +391,7 @@ ul.select li input[type="radio"]:checked + label {
   }
 }
 
-@media (max-width: 767px){
+@media (max-width: 768px){
   .page-template-page_archive-php main .overlay-div{
     padding: 0 15px;
   }
@@ -423,6 +425,10 @@ ul.select li input[type="radio"]:checked + label {
 
   .btp-dropdown.open .btp-dropdown-menu.author{
     grid-template-columns: 1fr;
+  }
+
+  .btp-dropdown .btp-author-search{
+    grid-column: 1;
   }
 
 }
