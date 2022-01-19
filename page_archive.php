@@ -9,8 +9,8 @@
   $search_query = ! empty( $_GET[ 'phrase' ] ) ? $_GET[ 'phrase' ] : '';
   $paged = (  get_query_var('paged')  ) ? get_query_var('paged') : 1;
   $main_tax_query = array();
-  $btp_filters = BTP_SEARCH_FILTERS_FORM::getInstance();
-  $tax_query = $btp_filters->getTaxQuery( $_GET );
+  //$btp_filters = BTP_SEARCH_FILTERS_FORM::getInstance();
+  //$tax_query = $btp_filters->getTaxQuery( $_GET );
   $args = array(
     'paged'     => $paged,
     'post_type' => isset( $_GET['type'] ) && $_GET['type'] != '' ? ( $_GET['type'] == 'article' ? 'post' : $_GET['type'] ) : array('post','podcast','video'),
@@ -51,14 +51,21 @@
     $args['year'] = $_GET['y'];
   }
 
-  // TAX QUERY
-  if( count( $tax_query ) > 1 ){
-    array_push( $main_tax_query, $tax_query );
+  // CATEGORY PARAMETER
+  if( isset( $_GET['section'] ) && $_GET['section'] ){
+    $args['category_name'] = $_GET['section'];
   }
+
+  // TAX QUERY
+  // if( count( $tax_query ) > 1 ){
+  //   array_push( $main_tax_query, $tax_query ); // FOR CATEGORIES AND TAGS
+  // }
 
   if( !empty( $main_tax_query ) ){
     $args['tax_query'] = $main_tax_query;
   }
+
+
 
   $query = new WP_Query( $args );
 
