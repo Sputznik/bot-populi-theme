@@ -79,7 +79,7 @@ class BTP_SEARCH_FILTERS_FORM extends BTP_SINGLETON{
 		$terms = get_terms( array(
 	    'taxonomy'    => $term_type,
 			'exclude'			=> 1,
-	    'hide_empty'  => false,
+	    'hide_empty'  => $term_type != 'author' ? false : true,
 	  ) );
 
 		$new_items = array();
