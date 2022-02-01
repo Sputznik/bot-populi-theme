@@ -217,6 +217,11 @@ ul.select li input[type="radio"]:checked + label {
   padding: 0;
 }
 
+.btn-reset-filters{
+  padding: 0;
+  text-transform: none;
+}
+
 .archive-search-wrapper .page-title,
 .archive-search-wrapper .page-subtitle,
 .template-archive .orbit-post-grid article.post-list .content-wrap .title,

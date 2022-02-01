@@ -28,6 +28,7 @@
         <?php endforeach;?>
       </ul>
     </div>
+    <button class="btn btn-reset-filters" data-behaviour="btp-reset-filters">Reset Filters</button>
   </div>
   <div class="btp-filter-separator d-none d-md-block"></div>
 <?php endif;?>
